@@ -603,6 +603,31 @@
  "orientation":"orthogonal",
  "properties":[
         {
+         "name":"mapCopyright",
+         "type":"string",
+         "value":"CC-BY-SA 3.0:\n - http:\/\/creativecommons.org\/licenses\/by-sa\/3.0\/\n - See the file: cc-by-sa-3.0.txt\nGNU GPL 3.0:\n - http:\/\/www.gnu.org\/licenses\/gpl-3.0.html\n - See the file: gpl-3.0.txt\n\nTilesets: workadventu.re, https:\/\/limezu.itch.io\/"
+        }, 
+        {
+         "name":"mapDescription",
+         "type":"string",
+         "value":"This map is perfect for a big event in which you want to organize workshop sessions for many people. Enjoy the big lobby with a central Help Desk and the cafeteria for a little break!\nYou should be able to seat 200 people so heat up the coffee machine!"
+        }, 
+        {
+         "name":"mapImage",
+         "type":"string",
+         "value":"map.png"
+        }, 
+        {
+         "name":"mapLink",
+         "type":"string",
+         "value":"https:\/\/valdotr.github.io\/big-workshop\/map.json"
+        }, 
+        {
+         "name":"mapName",
+         "type":"string",
+         "value":"Big workshop"
+        }, 
+        {
          "name":"script",
          "type":"string",
          "value":"script.js"
