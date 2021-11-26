@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/react": "^17.0.37",
     "@workadventure/iframe-api-typings": "^1.2.1",
     "eslint": "^7.24.0",
     "html-webpack-plugin": "^5.3.1",
@@ -21,5 +22,12 @@
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "lint": "node_modules/.bin/eslint src/ . --ext .ts",
     "fix": "node_modules/.bin/eslint --fix src/ . --ext .ts"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "os-browserify": "^0.3.0",
+    "react": "^17.0.2",
+    "web3": "^1.6.1"
   }
 }
