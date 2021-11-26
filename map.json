@@ -534,8 +534,95 @@
                  "width":191.198177323474,
                  "x":1599.93104828138,
                  "y":191.543378536428
+                }, 
+                {
+                 "height":0,
+                 "id":5,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1828.51985559567,
+                 "y":1370.03610108303
+                }, 
+                {
+                 "height":1.80505415162452,
+                 "id":6,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1758.12274368231,
+                 "y":1268.95306859206
+                }, 
+                {
+                 "height":83.0679772947528,
+                 "id":7,
+                 "name":"embedded",
+                 "properties":[
+                        {
+                         "name":"allowApi",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"url",
+                         "type":"string",
+                         "value":"embedded.html"
+                        }],
+                 "rotation":0,
+                 "type":"website",
+                 "visible":true,
+                 "width":109.372836771425,
+                 "x":1680.7420739305,
+                 "y":1218.33033365638
+                }, 
+                {
+                 "height":0,
+                 "id":8,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1791.49937699017,
+                 "y":1117.26429461443
+                }, 
+                {
+                 "height":0,
+                 "id":9,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1626.74788868891,
+                 "y":1028.65845216669
                 }],
          "opacity":1,
+         "properties":[
+                {
+                 "name":"allowApi",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
+                 "name":"openWebsite",
+                 "type":"string",
+                 "value":"iframe.html"
+                }, 
+                {
+                 "name":"openWebsiteAllowApi",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
+                 "name":"script",
+                 "type":"string",
+                 "value":"script.js"
+                }],
          "type":"objectgroup",
          "visible":true,
          "x":0,
@@ -578,7 +665,7 @@
          "y":0
         }],
  "nextlayerid":49,
- "nextobjectid":4,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -605,6 +692,16 @@
          "name":"mapName",
          "type":"string",
          "value":"Big workshop"
+        }, 
+        {
+         "name":"openWebsite",
+         "type":"string",
+         "value":"iframe.html"
+        }, 
+        {
+         "name":"openWebsiteAllowApi",
+         "type":"bool",
+         "value":true
         }, 
         {
          "name":"script",
