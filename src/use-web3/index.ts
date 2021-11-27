@@ -22,4 +22,5 @@ export const useWeb3 = () => {
   );
 
   console.log("heyhey", web3);
+  return web3;
 };
