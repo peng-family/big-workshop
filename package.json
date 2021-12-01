@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^17.0.37",
-    "@workadventure/iframe-api-typings": "^1.2.1",
+    "@workadventure/iframe-api-typings": "^1.6.3",
     "eslint": "^7.24.0",
     "html-webpack-plugin": "^5.3.1",
     "ts-loader": "^8.1.0",
