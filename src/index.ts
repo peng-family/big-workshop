@@ -4,29 +4,50 @@ import BigNumber from "bignumber.js";
 import Web3 from "web3";
 import { useWeb3 } from "./use-web3";
 
-console.log("Script started successfully");
-console.log(window);
 const WA = window.WA;
-let web3: Web3;
+
+let simpleWeb3: Web3;
 //@ts-ignore
 if (window.ethereum) {
-  web3 = useWeb3();
+  const { web3, pengFamilyContractERC720 } = useWeb3();
+  simpleWeb3 = web3;
+  simpleWeb3.eth.getAccounts().then((accounts) => {
+    pengFamilyContractERC720.methods
+      .tokensByAddress(accounts[0])
+      .call()
+      .then((result: any) => {
+        WA.ui.registerMenuCommand("menu test", {
+          iframe: `src/iframes/customMenu.html?nftIds=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
+          allowApi: true,
+        });
+      });
+  });
 }
 console.log("bonjour", WA);
 
 console.log(WA.room.onEnterLayer("metamask"));
 
 WA.room.onEnterLayer("metamask").subscribe(() => {
-  console.log(web3.eth);
-  web3.eth
+  console.log(simpleWeb3.eth);
+  simpleWeb3.eth
     .getAccounts()
-    .then((accounts) => web3.eth.getBalance(accounts[0]))
+    .then((accounts) => simpleWeb3.eth.getBalance(accounts[0]))
     .then((result) => {
       currentZone = "metamask_popup";
       WA.ui.openPopup(
         currentZone,
-        `Hello ser, you currently have ${new BigNumber(result).dividedBy(1000000000000000000).toString()} AVAX on your account. Have a great day ser.`,
+        `Hello ser, you currently have ${new BigNumber(result)
+          .dividedBy(1000000000000000000)
+          .toString()} AVAX on your account. Have a great day ser.`,
         [
+          {
+            label: "Close",
+            className: "primary",
+            callback: (popup) => {
+              // Close the popup when the "Close" button is pressed.
+              popup.close();
+            },
+          },
           {
             label: "Close",
             className: "primary",
