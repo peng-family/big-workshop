@@ -3,9 +3,38 @@
     <script src="https://play.workadventu.re/iframe_api.js"></script>
     <script src="script.js"></script>
     <script src="./customMenu.js"></script>
+    <style>
+        body {
+            font-family: PixelFont-7, monospace;
+            color: whitesmoke;
+        }
+      .background--custom {
+        background: linear-gradient(90deg, #2746db, #42ebbe, #8a93b3);
+        background-size: 300% 300%;
+        animation: gradient 4s alternate infinite;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+      .contents {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+    </style>
   </head>
   <body onload="buildImage()">
+    <h1>Generation 0</h1>
     <div class="contents" id="content"></div>
-    <div style="background-color: blue; width: 30px; height: 30px"></div>
   </body>
 </html>

@@ -16,8 +16,8 @@ if (window.ethereum) {
       .tokensByAddress(accounts[0])
       .call()
       .then((result: any) => {
-        WA.ui.registerMenuCommand("menu test", {
-          iframe: `src/iframes/customMenu.html?nftIds=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
+        WA.ui.registerMenuCommand("My NFTs", {
+          iframe: `src/iframes/customMenu.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
           allowApi: true,
         });
       });

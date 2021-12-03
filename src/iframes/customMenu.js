@@ -3,7 +3,7 @@ console.log("HELOOOOOO", window);
 
 const buildImage = async () => {
   console.log("buildImage");
-  const nftIds = getQueryVariable("nftIds");
+  const nftIds = getQueryVariable("gen0");
   console.log(nftIds);
   const nftUrl = getQueryVariable("nftUrl");
   const nftUrls = nftIds.map((id) => {
@@ -12,11 +12,24 @@ const buildImage = async () => {
     return nftUrl[0].concat(id).concat(".png");
   });
 
-  nftUrls.forEach((url) => {
-    var img = document.createElement("img");
+  nftIds.forEach(async (id) => {
+    const url = nftUrl[0].concat(id).concat(".png");
+    const imgContainer = document.createElement("div");
+    const idNft = document.createElement("div");
+    idNft.textContent = `${id}.`;
+    idNft.style = "position: absolute; top: 10px; left: 16px;";
+    const img = document.createElement("img");
     img.src = url;
-    img.style = "background-color: blue; width: 150px; height: 150px";
-    document.getElementById("content").appendChild(img);
+    img.style = "height: 100%; width: 100%;";
+    img.id = `nft-${id}`;
+    imgContainer.className = "background--custom";
+    imgContainer.style =
+      "width: 20vw; height: auto; min-height: 20vw;  padding: 5px; margin-bottom: 25px; position: relative;";
+    imgContainer.appendChild(idNft);
+    document
+      .getElementById("content")
+      .appendChild(imgContainer)
+      .appendChild(img);
   });
 };
 
