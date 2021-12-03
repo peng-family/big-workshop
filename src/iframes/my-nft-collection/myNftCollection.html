@@ -33,6 +33,26 @@
           background-position: 100%;
         }
       }
+
+      @keyframes shinnyCard {
+        0% {
+          box-shadow: 0 0 1px 1px #fff, 0 0 6px 3px #0ff;
+        }
+        50% {
+          box-shadow: 0 0 6px 3px #fff, 0 0 12px 9px #0ff;
+        }
+        100% {
+          box-shadow: 0 0 1px 1px #fff, 0 0 6px 3px #0ff;
+        }
+      }
+
+      .background--custom:hover {
+        -webkit-animation-name: shinnyCard;
+        -webkit-animation-duration: 2.5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+      }
+
       .summary {
         display: flex;
         flex-direction: column;
@@ -61,6 +81,14 @@
       .portrait {
         width: 45%;
         height: auto;
+        cursor: default !important;
+      }
+      .backButton {
+        width: 100%;
+        cursor: pointer;
+      }
+      h3:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -68,6 +96,9 @@
     <h1>Generation 0</h1>
     <div class="contents" id="content"></div>
     <div class="content summary hidden" id="summary">
+      <div class="backButton">
+        <h3 onclick="leaveSummary()">< back to the list</h3>
+      </div>
       <div id="summaryportrait" class="metadatas"></div>
       <div id="metadatas" class="metadatas"></div>
     </div>

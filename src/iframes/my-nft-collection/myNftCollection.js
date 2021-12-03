@@ -44,7 +44,7 @@ const buildIdNftElement = (id) => {
 };
 
 const buildImgContainer = (idNftElement) => {
-  const imgContainer = document.createElement("div");  
+  const imgContainer = document.createElement("div");
   imgContainer.className = "background--custom";
   imgContainer.style =
     "width: 20vw; height: auto; min-height: 20vw;  padding: 5px; margin-bottom: 25px; position: relative; cursor: pointer;";
@@ -53,17 +53,21 @@ const buildImgContainer = (idNftElement) => {
 };
 
 const buildSummary = (metadata, imgContainer) => {
+  const backContainer = document.createElement("div");
+  backContainer.style = "width: 100%;";
+  const backLabel = document.createElement("h3");
+  backLabel.textContent = "< back to the list";
+  backContainer.appendChild(backLabel);
+
   const cloneImgContainer = imgContainer.cloneNode(true);
   cloneImgContainer.classList.add("portrait");
-  const modalContainer = document.createElement("div");
-  modalContainer.style =
-    "width: 100%; height: 100%; position:absolute; z-index: 10;";
+
   const summary = document.getElementById("summary");
+  // summary.appendChild(backContainer);
   const summaryPortrait = document.getElementById("summaryportrait");
 
   const metadatas = document.getElementById("metadatas");
   const contents = document.getElementById("content");
-  const informations = document.createElement("div");
 
   Object.values(metadata.attributes).forEach((meta) => {
     const infoContainer = buildInfoContainer(meta.value, meta.trait_type);
@@ -71,9 +75,20 @@ const buildSummary = (metadata, imgContainer) => {
   });
 
   summaryPortrait.appendChild(cloneImgContainer);
-  summary.appendChild(informations);
   summary.classList.remove("hidden");
   contents.classList.add("hidden");
+};
+
+const leaveSummary = () => {
+  const summary = document.getElementById("summary");
+  const contents = document.getElementById("content");
+  const summaryPortrait = document.getElementById("summaryportrait");
+  const metadatas = document.getElementById("metadatas");
+
+  metadatas.innerHTML = "";
+  summaryPortrait.innerHTML = "";
+  summary.classList.add("hidden");
+  contents.classList.remove("hidden");
 };
 
 const buildInfoContainer = (metaInfo, metaTitle) => {
@@ -82,9 +97,9 @@ const buildInfoContainer = (metaInfo, metaTitle) => {
     "background-color: #ffffff; border-radius: 4px; color: initial; padding: 10px; margin: 20px; width: 40%";
   const title = document.createElement("h2");
   title.textContent = metaTitle;
-  title.style = "text-transform: capitalize;"
+  title.style = "text-transform: capitalize;";
   const content = document.createElement("h4");
-  content.style = "text-transform: capitalize;"
+  content.style = "text-transform: capitalize;";
   content.textContent = metaInfo;
   info.appendChild(title);
   info.appendChild(content);
