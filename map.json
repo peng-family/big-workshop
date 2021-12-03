@@ -43,7 +43,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"https:\/\/avaxpengfam.github.io\/big-workshop\/conf\u00e9rence.json"
+                 "value":"https:\/\/avaxpengfam.github.io\/big-workshop\/conference.json"
                 }],
          "type":"tilelayer",
          "visible":true,
