@@ -32,6 +32,12 @@
         display: flex;
         align-items: center;
       }
+      form {
+        margin: 0px;
+      }
+      input {
+        width: 50px;
+      }
     </style>
   </head>
   <body onload="getCollection(0)">
@@ -39,7 +45,12 @@
       <h1>Generation 0</h1>
       <div class="control">
         <h3 onclick="getCollection(-1)">Previous page</h3>
-        -
+        <input
+          id="inputPage"
+          onload="setInputNumber()"
+          oninput="changePageNumber()"
+          type="number"
+        />
         <h3 onclick="getCollection(+1)">Next page</h3>
       </div>
     </div>

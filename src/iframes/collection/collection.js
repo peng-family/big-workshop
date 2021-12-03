@@ -1,6 +1,19 @@
 let pageNumber = 1;
 const nbElement = 8;
 
+const setInputNumber = () => {
+  document.getElementById("inputPage").value = pageNumber;
+};
+
+const changePageNumber = () => {
+  const pageNumberQueried = document.getElementById("inputPage").value;
+  if (pageNumberQueried && pageNumber < pageNumberQueried) {
+    getCollection(pageNumberQueried - pageNumber);
+  } else if (pageNumberQueried && pageNumber > pageNumberQueried) {
+    getCollection(pageNumberQueried - pageNumber);
+  }
+};
+
 const getQueryVariable = (variable) => {
   var query = window.location.search.substring(1);
   var vars = query.split("&");
@@ -15,28 +28,24 @@ const getQueryVariable = (variable) => {
   console.log("Query variable %s not found", variable);
 };
 
-const totalSupply = getQueryVariable("totalSupply");
+const totalSupply = Number(getQueryVariable("totalSupply")[0]);
 
 const canGoNext = (number) => {
-  console.log(pageNumber * nbElement);
-  console.log((pageNumber * nbElement) % totalSupply);
   if (
-    number > 0 &&
-    (pageNumber * nbElement < totalSupply ||
-      (pageNumber * nbElement) % totalSupply >= pageNumber * nbElement)
+    (number > 0 && (pageNumber + number) * nbElement <= totalSupply) ||
+    ((pageNumber + number) * nbElement > totalSupply &&
+      ((pageNumber + number) * nbElement) % totalSupply < nbElement)
   ) {
     return true;
   }
 };
 
 const canGoPrevious = (number) => {
-  console.log("canGoPrevious", number, pageNumber, pageNumber + number > 0);
   return number < 0 && pageNumber + number > 0;
 };
 
 const getCollection = (number) => {
   if (canGoPrevious(number) || canGoNext(number) || number === 0) {
-    console.log("on passe", totalSupply);
     pageNumber = pageNumber + number;
     const contents = document.getElementById("content");
     contents.innerHTML = "";
@@ -69,6 +78,7 @@ const getCollection = (number) => {
       }
     }
   }
+  document.getElementById("inputPage").value = pageNumber;
 };
 
 const buildImgElement = (url, id) => {
