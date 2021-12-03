@@ -20,6 +20,10 @@ if (window.ethereum) {
           iframe: `src/iframes/customMenu.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
           allowApi: true,
         });
+        WA.ui.registerMenuCommand("My tickets", {
+          iframe: `src/iframes/customMenu.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
+          allowApi: true,
+        });
       });
   });
 }
