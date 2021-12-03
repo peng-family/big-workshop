@@ -41,19 +41,9 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"JistiRoomAdminTag",
-                 "type":"string",
-                 "value":"speaker"
-                }, 
-                {
                  "name":"JitsiRoom",
                  "type":"string",
                  "value":"Bigconference"
-                }, 
-                {
-                 "name":"JitsiRoomAdminTag",
-                 "type":"string",
-                 "value":"admin"
                 }],
          "type":"tilelayer",
          "visible":true,
