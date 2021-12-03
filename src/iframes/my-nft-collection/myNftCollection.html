@@ -2,7 +2,7 @@
   <head>
     <script src="https://play.workadventu.re/iframe_api.js"></script>
     <script src="script.js"></script>
-    <script src="./nftCollection.js"></script>
+    <script src="./myNftCollection.js"></script>
     <style>
       body {
         font-family: PixelFont-7, monospace;
@@ -17,6 +17,7 @@
           #ffffff,
           #cb6cba
         );
+        background-color: rgba(30, 30, 30, 0.512);
         background-size: 300% 300%;
         animation: gradient 6.5s alternate infinite;
         top: 0;
@@ -32,16 +33,43 @@
           background-position: 100%;
         }
       }
+      .summary {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .hidden {
+        display: none !important;
+      }
       .contents {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
+        width: 100%;
+      }
+      .metadatas {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+      }
+      .portrait {
+        width: 45%;
+        height: auto;
       }
     </style>
   </head>
   <body onload="buildImage()">
     <h1>Generation 0</h1>
     <div class="contents" id="content"></div>
+    <div class="content summary hidden" id="summary">
+      <div id="summaryportrait" class="metadatas"></div>
+      <div id="metadatas" class="metadatas"></div>
+    </div>
   </body>
 </html>

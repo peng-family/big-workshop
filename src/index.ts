@@ -17,11 +17,11 @@ if (window.ethereum) {
       .call()
       .then((result: any) => {
         WA.ui.registerMenuCommand("My NFTs", {
-          iframe: `src/iframes/nftCollection.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
+          iframe: `src/iframes/my-nft-collection/myNftCollection.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
           allowApi: true,
         });
-        WA.ui.registerMenuCommand("My tickets", {
-          iframe: `src/iframes/customMenu.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
+        WA.ui.registerMenuCommand("Collection", {
+          iframe: `src/iframes/collection/collection.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
           allowApi: true,
         });
       });

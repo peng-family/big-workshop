@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="https://play.workadventu.re/iframe_api.js"></script>
+    <script src="script.js"></script>
+    <script src="./collection.js"></script>
+    <style>
+      body {
+        font-family: PixelFont-7, monospace;
+        color: whitesmoke;
+      }
+      .contents {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body onload="getCollection()">
+    <h1>Generation 0</h1>
+    <div class="contents" id="content"></div>
+  </body>
+</html>
