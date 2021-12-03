@@ -16,8 +16,5 @@ export const useWeb3 = () => {
     bbuxContractArtifacts.abi as any,
     PENG_FAM_CONTRACT
   );
-  console.log("peng", pengFamilyContractERC720);
-  console.log(pengFamilyContractERC720.methods.tokensByAddress);
-  console.log("heyhey", web3);
   return { web3, pengFamilyContractERC720 };
 };
