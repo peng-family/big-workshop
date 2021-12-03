@@ -14,10 +14,36 @@
         align-items: center;
         justify-content: space-around;
       }
+      #header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      h3 {
+        cursor: pointer;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      h3:hover {
+        text-decoration: underline;
+      }
+      .control {
+        display: flex;
+        align-items: center;
+      }
     </style>
   </head>
-  <body onload="getCollection()">
-    <h1>Generation 0</h1>
+  <body onload="getCollection(0)">
+    <div id="header">
+      <h1>Generation 0</h1>
+      <div class="control">
+        <h3 onclick="getCollection(-1)">Previous page</h3>
+        -
+        <h3 onclick="getCollection(+1)">Next page</h3>
+      </div>
+    </div>
+
     <div class="contents" id="content"></div>
   </body>
 </html>

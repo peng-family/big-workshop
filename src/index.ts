@@ -15,19 +15,23 @@ if (window.ethereum) {
     pengFamilyContractERC720.methods
       .tokensByAddress(accounts[0])
       .call()
-      .then((result: any) => {
+      .then((ntfIds: any) => {
         WA.ui.registerMenuCommand("My NFTs", {
-          iframe: `src/iframes/my-nft-collection/myNftCollection.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
-          allowApi: true,
-        });
-        WA.ui.registerMenuCommand("Collection", {
-          iframe: `src/iframes/collection/collection.html?gen0=${result}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
+          iframe: `src/iframes/my-nft-collection/myNftCollection.html?gen0=${ntfIds}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
           allowApi: true,
         });
       });
   });
+  pengFamilyContractERC720.methods
+    .totalSupply()
+    .call()
+    .then((totalSupply: number) =>
+      WA.ui.registerMenuCommand("Collection", {
+        iframe: `src/iframes/collection/collection.html?totalSupply=${totalSupply}`,
+        allowApi: true,
+      })
+    );
 }
-console.log("bonjour", WA);
 
 console.log(WA.room.onEnterLayer("metamask"));
 
