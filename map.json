@@ -43,7 +43,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"https:\/\/avaxpengfam.github.io\/big-workshop\/conference.json"
+                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/conference"
                 }],
          "type":"tilelayer",
          "visible":true,
