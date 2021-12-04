@@ -41,14 +41,9 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"audioloop",
-                 "type":"bool",
-                 "value":true
-                }, 
-                {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/jazz"
+                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/jazz.mp3"
                 }],
          "type":"tilelayer",
          "visible":true,
