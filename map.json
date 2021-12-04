@@ -43,7 +43,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/jazz.mp3"
+                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/jazz"
                 }],
          "type":"tilelayer",
          "visible":true,
