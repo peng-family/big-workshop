@@ -48,7 +48,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/soundcloud.com\/arthyum\/red-hot-chili-peppers"
+                 "value":"https:\/\/soundcloud.com\/arthyum\/red-hot-chili-peppers?si=06e3fe2c9ade49e2b905823ebbcbbe80"
                 }],
          "type":"tilelayer",
          "visible":true,
