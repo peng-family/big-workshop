@@ -1,3 +1,14 @@
+const { web3, pengFamilyContractERC720 } = useWeb3();
+simpleWeb3 = web3;
+simpleWeb3.eth.getAccounts().then((accounts) => {
+  pengFamilyContractERC720.methods
+    .totalSupply()
+    .call()
+    .then((totalSupply) => {
+      console.log(totalSupply);
+    });
+});
+
 let pageNumber = 1;
 const nbElement = 8;
 
@@ -56,29 +67,63 @@ const getCollection = (number) => {
       index++
     ) {
       if (totalSupply > index) {
-        const req = new XMLHttpRequest();
-        req.open(
-          "GET",
-          `https://ipfs.io/ipfs/QmcEgLN4B43ZLL2QwQbsmWJGS6TZEwHP6ju3zKEocg5uh8/${index}.json`
-        );
-        req.onload = () => {
-          const metadata = JSON.parse(req.response);
-          const idNftElement = buildIdNftElement(metadata.tokenId);
-          const imgElement = buildImgElement(metadata.image, metadata.tokenId);
-          const imgContainer = buildImgContainer(
-            idNftElement,
-            metadata.tokenId
-          );
-          imgContainer.appendChild(imgElement);
+        pengFamilyContractERC720.methods
+          .tokenURI(index)
+          .call()
+          .then((tokenUri) => {
+            const tmpUrl = tokenUri.substring("ipfs://".length);
+            const ipfsUrl = "https://ipfs.io/ipfs/".concat(tmpUrl);
+            getMetaData(ipfsUrl, (metadata) => {
+              const idNftElement = buildIdNftElement(metadata.tokenId);
+              const imgElement = buildImgElement(
+                metadata.image,
+                metadata.tokenId
+              );
+              const imgContainer = buildImgContainer(
+                idNftElement,
+                metadata.tokenId
+              );
+              imgContainer.appendChild(imgElement);
 
-          document.getElementById("content").appendChild(imgContainer);
-        };
-        req.onerror = (err) => console.error(err);
-        req.send();
+              document.getElementById("content").appendChild(imgContainer);
+            });
+            // const metadata = JSON.parse(req.response);
+          });
+        // const req = new XMLHttpRequest();
+        // req.open(
+        //   "GET",
+        //   `https://ipfs.io/ipfs/QmYebtxJbEssZn9zXjZAfQa4fykRcWaVouf4UaDKLGpiBE/${index}.json`
+        // );
+        // req.onload = () => {
+        //   const metadata = JSON.parse(req.response);
+        //   const idNftElement = buildIdNftElement(metadata.tokenId);
+        //   const imgElement = buildImgElement(metadata.image, metadata.tokenId);
+        //   const imgContainer = buildImgContainer(
+        //     idNftElement,
+        //     metadata.tokenId
+        //   );
+        //   imgContainer.appendChild(imgElement);
+
+        //   document.getElementById("content").appendChild(imgContainer);
+        // };
+        // req.onerror = (err) => console.error(err);
+        // req.send();
       }
     }
   }
   document.getElementById("inputPage").value = pageNumber;
+};
+
+const getMetaData = (id, cb) => {
+  const req = new XMLHttpRequest();
+  req.open("GET", id);
+  req.onload = () => {
+    cb(JSON.parse(req.response));
+  };
+  req.onerror = (err) => {
+    console.error(err);
+  };
+  req.send();
 };
 
 const buildImgElement = (url, id) => {

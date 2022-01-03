@@ -1,33 +1,29 @@
 const buildImage = async () => {
   const nftIds = getQueryVariable("gen0");
-  const nftUrl = getQueryVariable("nftUrl")[0];
 
   if (nftIds.length) {
     nftIds.forEach(async (id) => {
-      const url = nftUrl.concat(id).concat(".png");
-      const imgElement = buildImgElement(url, id);
-      const idNftElement = buildIdNftElement(id);
-      const imgContainer = buildImgContainer(idNftElement, id);
-      imgContainer.appendChild(imgElement);
+      const tmpUrl = id.substring("ipfs://".length)
+      const ipfsUrl = "https://ipfs.io/ipfs/".concat(tmpUrl); 
+      getMetaData(ipfsUrl, (metadata) => {
+        const imgElement = buildImgElement(metadata.image, id);
+        const idNftElement = buildIdNftElement(metadata.tokenId);
+        const imgContainer = buildImgContainer(idNftElement, metadata.tokenId);
 
-      imgContainer.onclick = () => {
-        getMetaData(id, (metadata) => {
+        imgContainer.appendChild(imgElement);
+        imgContainer.onclick = () => {
           buildSummary(metadata, imgContainer);
-        });
-      };
-
-      document.getElementById("content").appendChild(imgContainer);
+        }  
+        document.getElementById("content").appendChild(imgContainer);
+      });
     });
   }
 };
 
 const getMetaData = (id, cb) => {
   const req = new XMLHttpRequest();
-  req.open(
-    "GET",
-    `https://ipfs.io/ipfs/QmcEgLN4B43ZLL2QwQbsmWJGS6TZEwHP6ju3zKEocg5uh8/${id}.json`
-  );
-  req.onload = (result) => {
+  req.open("GET", id);
+  req.onload = () => {
     cb(JSON.parse(req.response));
   };
   req.onerror = (err) => {
@@ -122,7 +118,7 @@ const getQueryVariable = (variable) => {
     if (decodeURIComponent(pair[0]) == variable) {
       const nftsString = decodeURIComponent(pair[1]);
       const nfts = nftsString.split(",");
-      return nfts;
+      return nfts[0] !== "" ? nfts : [];
     }
   }
   console.log("Query variable %s not found", variable);

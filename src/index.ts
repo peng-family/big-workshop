@@ -16,9 +16,14 @@ if (window.ethereum) {
       .tokensByAddress(accounts[0])
       .call()
       .then((ntfIds: any) => {
-        WA.ui.registerMenuCommand("My NFTs", {
-          iframe: `src/iframes/my-nft-collection/myNftCollection.html?gen0=${ntfIds}&nftUrl=https://ipfs.io/ipfs/QmXYV83kA5gMUFtGnNMECE9Lojx6dsxwWuvHT7BYxP3Dnb/`,
-          allowApi: true,
+        const metadataPromises = ntfIds.map((nftId: string) =>
+          pengFamilyContractERC720.methods.tokenURI(nftId).call()
+        );
+        Promise.all(metadataPromises).then((metadataLinks: string[]) => {
+          WA.ui.registerMenuCommand("My NFTs", {
+            iframe: `src/iframes/my-nft-collection/myNftCollection.html?gen0=${metadataLinks}`,
+            allowApi: true,
+          });
         });
       });
   });
@@ -33,10 +38,9 @@ if (window.ethereum) {
     );
 }
 
-console.log(WA.room.onEnterLayer("metamask"));
+// console.log(WA.room.onEnterLayer("metamask"));
 
 WA.room.onEnterLayer("metamask").subscribe(() => {
-  console.log(simpleWeb3.eth);
   simpleWeb3.eth
     .getAccounts()
     .then((accounts) => simpleWeb3.eth.getBalance(accounts[0]))
@@ -66,11 +70,10 @@ WA.room.onEnterLayer("metamask").subscribe(() => {
           },
         ]
       );
-      console.log();
     });
 });
 
-console.log(WA.room.onEnterLayer);
+// console.log(WA.room.onEnterLayer);
 
 let currentZone: string;
 let currentPopup: any;
