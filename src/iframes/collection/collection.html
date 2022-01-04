@@ -1,7 +1,16 @@
 <html>
   <head>
     <script src="https://play.workadventu.re/iframe_api.js"></script>
-    <script src="script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+      integrity="sha512-/PTXSvaFzmO4So7Ghyq+DEZOz0sNLU4v1DP4gMOfY3kFu9L/IKoqSHZ6lNl3ZoZ7wT20io3vu/U4IchGcGIhfw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./../helpers/index.js"></script>
+    <script src="./../use-web3/contracts/PengFam.js"></script>
+    <script src="./../use-web3/index.js"></script>
+    <script src="./../nft-ui/generatePenguinNFT.js"></script>
     <script src="./collection.js"></script>
     <style>
       body {
@@ -38,6 +47,78 @@
       input {
         width: 50px;
       }
+      .background--custom {
+        background: linear-gradient(
+          90deg,
+          #475dcb,
+          #ffffff,
+          #42ebbe,
+          #ffffff,
+          #cb6cba
+        );
+        background-color: rgba(30, 30, 30, 0.512);
+        background-size: 300% 300%;
+        animation: gradient 6.5s alternate infinite;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+
+      @keyframes shinnyCard {
+        0% {
+          box-shadow: 0 0 1px 1px #fff, 0 0 6px 3px #0ff;
+        }
+        50% {
+          box-shadow: 0 0 6px 3px #fff, 0 0 12px 9px #0ff;
+        }
+        100% {
+          box-shadow: 0 0 1px 1px #fff, 0 0 6px 3px #0ff;
+        }
+      }
+
+      .background--custom:hover {
+        -webkit-animation-name: shinnyCard;
+        -webkit-animation-duration: 2.5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+      }
+
+      .summary {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .metadatas {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+      }
+      .portrait {
+        width: 45%;
+        height: auto;
+        cursor: default !important;
+      }
+      .backButton {
+        width: 100%;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body onload="getCollection(0)">
@@ -56,5 +137,12 @@
     </div>
 
     <div class="contents" id="content"></div>
+    <div class="content summary hidden" id="summary">
+      <div class="backButton">
+        <h3 onclick="leaveSummary()">< back to the list</h3>
+      </div>
+      <div id="summaryportrait" class="metadatas"></div>
+      <div id="metadatas" class="metadatas"></div>
+    </div>
   </body>
 </html>
