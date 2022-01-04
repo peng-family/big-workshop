@@ -12,20 +12,21 @@ if (window.ethereum) {
   const { web3, pengFamilyContractERC720 } = useWeb3();
   simpleWeb3 = web3;
   simpleWeb3.eth.getAccounts().then((accounts) => {
-    pengFamilyContractERC720.methods
-      .tokensByAddress(accounts[0])
-      .call()
-      .then((ntfIds: any) => {
-        const metadataPromises = ntfIds.map((nftId: string) =>
-          pengFamilyContractERC720.methods.tokenURI(nftId).call()
-        );
-        Promise.all(metadataPromises).then((metadataLinks: string[]) => {
-          WA.ui.registerMenuCommand("My NFTs", {
-            iframe: `src/iframes/my-nft-collection/myNftCollection.html?gen0=${metadataLinks}`,
-            allowApi: true,
-          });
-        });
-      });
+    WA.ui.registerMenuCommand("My NFTs", {
+      iframe: `src/iframes/my-nft-collection/myNftCollection.html?accounAddress=${accounts[0]}`,
+      allowApi: true,
+    });
+    // pengFamilyContractERC720.methods
+    //   .tokensByAddress(accounts[0])
+    //   .call()
+    //   .then((ntfIds: any) => {
+    //     const metadataPromises = ntfIds.map((nftId: string) =>
+    //       pengFamilyContractERC720.methods.tokenURI(nftId).call()
+    //     );
+    //     Promise.all(metadataPromises).then((metadataLinks: string[]) => {
+          
+    //     });
+    //   });
   });
   pengFamilyContractERC720.methods
     .totalSupply()
