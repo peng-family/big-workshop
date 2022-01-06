@@ -77,7 +77,7 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"OpenWebsite",
+                 "name":"openWebsite",
                  "type":"string",
                  "value":"https:\/\/skribbl.io\/"
                 }],
