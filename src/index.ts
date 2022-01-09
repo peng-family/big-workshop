@@ -13,21 +13,36 @@ console.log("window", window);
 if (window.ethereum) {
   const { web3, pengFamilyContractERC720 } = useWeb3();
   simpleWeb3 = web3;
-  simpleWeb3.eth.getAccounts().then((accounts) => {
-    WA.ui.registerMenuCommand("My NFTs", {
-      iframe: `src/iframes/my-nft-collection/myNftCollection.html?accounAddress=${accounts[0]}`,
-      allowApi: true,
-    });
-  });
-  pengFamilyContractERC720.methods
-    .totalSupply()
-    .call()
-    .then((totalSupply: number) =>
-      WA.ui.registerMenuCommand("Collection", {
-        iframe: `src/iframes/collection/collection.html?totalSupply=${totalSupply}`,
-        allowApi: true,
+  try {
+    simpleWeb3.eth
+      .getAccounts()
+      .then((accounts) => {
+        WA.ui.registerMenuCommand("My NFTs", {
+          iframe: `src/iframes/my-nft-collection/myNftCollection.html?accounAddress=${accounts[0]}`,
+          allowApi: true,
+        });
       })
-    );
+      .catch((err: any) =>
+        console.error("An error occured during the load of account.", err)
+      );
+    pengFamilyContractERC720.methods
+      .totalSupply()
+      .call()
+      .then((totalSupply: number) =>
+        WA.ui.registerMenuCommand("Collection", {
+          iframe: `src/iframes/collection/collection.html?totalSupply=${totalSupply}`,
+          allowApi: true,
+        })
+      )
+      .catch((err: any) =>
+        console.error("An error occured during the load of total supply.", err)
+      );
+    console.log("WEB 3 successfully loaded");
+  } catch (err) {
+    console.error(err);
+  }
+} else {
+  console.error("An error occured during the load of web3");
 }
 
 // console.log(WA.room.onEnterLayer("metamask"));
