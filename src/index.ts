@@ -7,6 +7,8 @@ import { useWeb3 } from "./use-web3";
 const WA = window.WA;
 
 let simpleWeb3: Web3;
+console.log("window", window);
+
 //@ts-ignore
 if (window.ethereum) {
   const { web3, pengFamilyContractERC720 } = useWeb3();
@@ -16,17 +18,6 @@ if (window.ethereum) {
       iframe: `src/iframes/my-nft-collection/myNftCollection.html?accounAddress=${accounts[0]}`,
       allowApi: true,
     });
-    // pengFamilyContractERC720.methods
-    //   .tokensByAddress(accounts[0])
-    //   .call()
-    //   .then((ntfIds: any) => {
-    //     const metadataPromises = ntfIds.map((nftId: string) =>
-    //       pengFamilyContractERC720.methods.tokenURI(nftId).call()
-    //     );
-    //     Promise.all(metadataPromises).then((metadataLinks: string[]) => {
-          
-    //     });
-    //   });
   });
   pengFamilyContractERC720.methods
     .totalSupply()
