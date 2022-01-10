@@ -392,7 +392,7 @@
                 {
                  "name":"openWebsite",
                  "type":"string",
-                 "value":"https:\/\/www.miniclip.com\/games\/8-ball-pool-multiplayer\/fr\/#privacy-settings"
+                 "value":"https:\/\/www.miniclip.com\/games\/8-ball-pool-multiplayer\/fr\/"
                 }],
          "type":"tilelayer",
          "visible":true,
