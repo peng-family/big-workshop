@@ -1,7 +1,7 @@
 import { Contract } from "web3-eth-contract";
 import Web3 from "web3";
 
-import bbuxContractArtifacts from "./contracts/PengFam.json";
+import { avaxPenguin } from "./contracts/PengFam";
 
 //@ts-ignore
 const ETHEREUM = window.ethereum;
@@ -16,7 +16,7 @@ export const useWeb3 = () => {
   }
 
   const pengFamilyContractERC720 = new web3.eth.Contract(
-    bbuxContractArtifacts.abi as any,
+    avaxPenguin.abi as any,
     PENG_FAM_CONTRACT
   );
   return { web3, pengFamilyContractERC720 };
