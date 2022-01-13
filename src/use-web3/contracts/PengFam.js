@@ -1,4 +1,4 @@
-const avaxPenguin = {
+export const avaxPenguin = {
   contractName: "AvaxPenguin",
   abi: [
     {
