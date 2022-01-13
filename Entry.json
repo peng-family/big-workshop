@@ -37,7 +37,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/EntryDefi"
+                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/Defi"
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -55,7 +55,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/EntryNFT"
+                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/NFT"
                 }],
          "type":"tilelayer",
          "visible":true,

@@ -37,7 +37,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/Entry"
+                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/lobby"
                 }],
          "type":"tilelayer",
          "visible":true,
