@@ -37,7 +37,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":""
+                 "value":"https:\/\/play.workadventu.re\/@\/avax-penguin-family\/penguinverse\/EntryDefi"
                 }],
          "type":"tilelayer",
          "visible":true,
