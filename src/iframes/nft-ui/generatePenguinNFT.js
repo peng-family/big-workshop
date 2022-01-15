@@ -6,7 +6,7 @@ const generatePenguinNFT = (id) => {
     .tokenURI(id)
     .call()
     .then(getMetaData)
-    .then(buildNFTElement)
+    .then((metadata) => buildNFTElement(metadata, id))
     .catch((error) => console.log("error", error));
 };
 
@@ -15,15 +15,19 @@ const buildIpfsUrl = (tokenUri) => {
   return "https://ipfs.io/ipfs/".concat(tmpUrl);
 };
 
-const buildNFTElement = (metadata) => {
-  const idNftElement = buildIdNftElement(metadata.tokenId);
+const buildNFTElement = (metadata, id) => {
+  const nameNftElement = buildIdNftElement(metadata.name);
+  const idNftElement = buildIdNftElement(id);
   const imgElement = buildImgElement(metadata.image, metadata.tokenId);
-  const imgContainer = buildImgContainer(idNftElement, metadata.tokenId);
-  imgContainer.appendChild(imgElement);
+  const imgContainer = buildImgContainer(
+    nameNftElement,
+    idNftElement,
+    imgElement
+  );
   imgContainer.onclick = () => {
     buildSummary(metadata, imgContainer);
   };
-  return { htmlElement: imgContainer, metadata };
+  return { htmlElement: imgContainer, metadata, id };
 };
 
 const getMetaData = (tokenUri) => {
@@ -41,17 +45,21 @@ const buildImgElement = (url, id) => {
 const buildIdNftElement = (id) => {
   const idNft = document.createElement("div");
   idNft.textContent = `${id}.`;
-  idNft.style = "position: absolute; top: 10px; left: 16px;";
+  idNft.style = "color: white;";
   return idNft;
 };
 
-const buildImgContainer = (idNftElement) => {
-  const imgContainer = document.createElement("div");
+const buildImgContainer = (nameNftElement, idNftElement, imgContainer) => {
+  const penguinContainer = document.createElement("div");
+  penguinContainer.style =
+    "margin-bottom: 25px;  padding: 10px; border-radius: 3px;";
   imgContainer.className = "background--custom";
   imgContainer.style =
-    "width: 20vw; height: auto; min-height: 20vw;  padding: 5px; margin-bottom: 25px; position: relative; cursor: pointer;";
-  imgContainer.appendChild(idNftElement);
-  return imgContainer;
+    "width: 10vw; height: auto; min-height: 10vw; padding: 5px; cursor: pointer;";
+  penguinContainer.appendChild(idNftElement);
+  penguinContainer.appendChild(imgContainer);
+  penguinContainer.appendChild(nameNftElement);
+  return penguinContainer;
 };
 
 const buildSummary = (metadata, imgContainer) => {

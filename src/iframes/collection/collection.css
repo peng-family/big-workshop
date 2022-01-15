@@ -1,0 +1,110 @@
+body {
+  font-family: PixelFont-7, monospace;
+  color: whitesmoke;
+}
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+#header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+h3 {
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+h3:hover {
+  text-decoration: underline;
+}
+.control {
+  display: flex;
+  align-items: center;
+}
+form {
+  margin: 0px;
+}
+input {
+  width: 50px;
+}
+.background--custom {
+  background: linear-gradient(
+    90deg,
+    #475dcb,
+    #ffffff,
+    #42ebbe,
+    #ffffff,
+    #cb6cba
+  );
+  background-color: rgba(30, 30, 30, 0.512);
+  background-size: 300% 300%;
+  animation: gradient 6.5s alternate infinite;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+@keyframes shinnyCard {
+  0% {
+    box-shadow: 0 0 1px 1px #fff, 0 0 6px 3px #0ff;
+  }
+  50% {
+    box-shadow: 0 0 6px 3px #fff, 0 0 12px 9px #0ff;
+  }
+  100% {
+    box-shadow: 0 0 1px 1px #fff, 0 0 6px 3px #0ff;
+  }
+}
+
+.background--custom:hover {
+  -webkit-animation-name: shinnyCard;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.hidden {
+  display: none !important;
+}
+.metadatas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.portrait {
+  height: auto;
+  cursor: default !important;
+}
+.portrait img {
+  width: 20vw  !important;
+  min-height: 20vw  !important;
+}
+
+.backButton {
+  width: 100%;
+  cursor: pointer;
+}

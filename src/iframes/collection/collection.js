@@ -1,7 +1,7 @@
 const totalSupply = Number(getQueryVariable("totalSupply")[0]);
 
 let pageNumber = 1;
-const nbElement = 8;
+const nbElement = 21;
 
 const setInputNumber = () => {
   document.getElementById("inputPage").value = pageNumber;
@@ -46,9 +46,7 @@ const getCollection = (number) => {
       }
     }
     Promise.all(promisesToGenereateNFT).then((results) => {
-      results.sort((a, b) =>
-        compareToSort(a.metadata.tokenId, b.metadata.tokenId)
-      );
+      results.sort((a, b) => compareToSort(a.id, b.id));
       results.forEach((result) =>
         document.getElementById("content").appendChild(result.htmlElement)
       );
