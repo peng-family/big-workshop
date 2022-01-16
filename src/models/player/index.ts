@@ -19,11 +19,15 @@ export class Player {
 
   public initialize = async () => {
     this._penguins = await this._penguinContract
-      .tokenByAddress()
+      .tokensByAddress()
       .then((tokenIds) => tokenIds.map((tokenId) => new Penguin(tokenId)));
 
     // todo: modifier ici pour vraiment target les tribes
-    if (this._penguins.findIndex((peng) => peng.mintId === 3337) !== -1) {
+    if (
+      this._penguins.findIndex(
+        (peng) => peng.mintId === 3337 || peng.mintId === 2246
+      ) !== -1
+    ) {
       this._tribes.push(Tribes.VOLCANO);
     }
   };

@@ -30,6 +30,7 @@ export class LayerManager {
       this._audioEffect.playLockDoor();
       this._WA.room.hideLayer("volcano");
       this._WA.room.showLayer("volcanoBlocker");
+      this._WA.room.showLayer("volcano over player");
     } catch (err) {
       console.log(err);
     }
@@ -40,6 +41,7 @@ export class LayerManager {
       this._audioEffect.playUnlockDoor();
       this._WA.room.showLayer("volcano");
       this._WA.room.hideLayer("volcanoBlocker");
+      this._WA.room.hideLayer("volcano over player");
     } catch (err) {
       console.log(err);
     }

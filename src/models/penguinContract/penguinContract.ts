@@ -27,7 +27,7 @@ export class PenguinContract {
       );
   };
 
-  public tokenByAddress = async (): Promise<number[]> => {
+  public tokensByAddress = async (): Promise<number[]> => {
     return this._penguinERC720Contract.methods
       .tokensByAddress(this._account.address)
       .call()
