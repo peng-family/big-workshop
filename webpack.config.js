@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const SRC = path.resolve(__dirname, "public/sounds/");
 
 module.exports = {
   mode: "development",
@@ -25,6 +26,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpg|gif|mp3)$/,
+        use: "file-loader",
       },
     ],
   },
