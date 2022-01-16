@@ -25,7 +25,7 @@ const buildNFTElement = (metadata, id) => {
     imgElement
   );
   imgContainer.onclick = () => {
-    buildSummary(metadata, imgContainer);
+    buildSummary(metadata, imgContainer, id);
   };
   return { htmlElement: imgContainer, metadata, id };
 };
@@ -62,7 +62,7 @@ const buildImgContainer = (nameNftElement, idNftElement, imgContainer) => {
   return penguinContainer;
 };
 
-const buildSummary = (metadata, imgContainer) => {
+const buildSummary = (metadata, imgContainer, id) => {
   const backContainer = document.createElement("div");
   backContainer.style = "width: 100%;";
   const backLabel = document.createElement("h3");
@@ -77,8 +77,11 @@ const buildSummary = (metadata, imgContainer) => {
   const summaryPortrait = document.getElementById("summaryportrait");
 
   const metadatas = document.getElementById("metadatas");
+  const kalaoContainer = document.getElementById("metadatas");
   const contents = document.getElementById("content");
   const header = document.getElementById("header");
+
+  kalaoContainer.appendChild(buildKalaoContainer(id));
 
   Object.values(metadata.attributes).forEach((meta) => {
     const infoContainer = buildInfoContainer(meta.value, meta.trait_type);
@@ -117,6 +120,25 @@ const buildInfoContainer = (metaInfo, metaTitle) => {
   content.style = "text-transform: capitalize;";
   content.textContent = metaInfo;
   info.appendChild(title);
+  info.appendChild(content);
+  return info;
+};
+
+const buildKalaoContainer = (id) => {
+  const info = document.createElement("div");
+  info.style =
+    "background-color: #ffffff; border-radius: 4px; color: initial; padding: 10px; margin: 20px; width: 40%";
+
+  const content = document.createElement("a");
+  const kalaoLogo = document.createElement("img");
+  kalaoLogo.src = "../../assets/kalao-logo-default-light.svg";
+  kalaoLogo.style = "width: 100px; height: 50px;";
+  kalaoLogo.height = "50px";
+  kalaoLogo.width = "100px";
+
+  content.href = `https://marketplace.kalao.io/token/0x96f020b13f1b8b46d70723c3a3c7b4cc6618e99e/${id}`;
+  content.target = "_blank";
+  content.appendChild(kalaoLogo);
   info.appendChild(content);
   return info;
 };
