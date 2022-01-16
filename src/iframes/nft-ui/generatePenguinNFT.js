@@ -6,7 +6,7 @@ const generatePenguinNFT = (id) => {
     .tokenURI(id)
     .call()
     .then(getMetaData)
-    .then(buildNFTElement)
+    .then((metadata) => buildNFTElement(metadata, id))
     .catch((error) => console.log("error", error));
 };
 
@@ -15,15 +15,19 @@ const buildIpfsUrl = (tokenUri) => {
   return "https://ipfs.io/ipfs/".concat(tmpUrl);
 };
 
-const buildNFTElement = (metadata) => {
-  const idNftElement = buildIdNftElement(metadata.tokenId);
+const buildNFTElement = (metadata, id) => {
+  const nameNftElement = buildIdNftElement(metadata.name);
+  const idNftElement = buildIdNftElement(id);
   const imgElement = buildImgElement(metadata.image, metadata.tokenId);
-  const imgContainer = buildImgContainer(idNftElement, metadata.tokenId);
-  imgContainer.appendChild(imgElement);
+  const imgContainer = buildImgContainer(
+    nameNftElement,
+    idNftElement,
+    imgElement
+  );
   imgContainer.onclick = () => {
-    buildSummary(metadata, imgContainer);
+    buildSummary(metadata, imgContainer, id);
   };
-  return { htmlElement: imgContainer, metadata };
+  return { htmlElement: imgContainer, metadata, id };
 };
 
 const getMetaData = (tokenUri) => {
@@ -41,20 +45,24 @@ const buildImgElement = (url, id) => {
 const buildIdNftElement = (id) => {
   const idNft = document.createElement("div");
   idNft.textContent = `${id}.`;
-  idNft.style = "position: absolute; top: 10px; left: 16px;";
+  idNft.style = "color: white;";
   return idNft;
 };
 
-const buildImgContainer = (idNftElement) => {
-  const imgContainer = document.createElement("div");
+const buildImgContainer = (nameNftElement, idNftElement, imgContainer) => {
+  const penguinContainer = document.createElement("div");
+  penguinContainer.style =
+    "margin-bottom: 25px;  padding: 10px; border-radius: 3px;";
   imgContainer.className = "background--custom";
   imgContainer.style =
-    "width: 20vw; height: auto; min-height: 20vw;  padding: 5px; margin-bottom: 25px; position: relative; cursor: pointer;";
-  imgContainer.appendChild(idNftElement);
-  return imgContainer;
+    "width: 10vw; height: auto; min-height: 10vw; padding: 5px; cursor: pointer;";
+  penguinContainer.appendChild(idNftElement);
+  penguinContainer.appendChild(imgContainer);
+  penguinContainer.appendChild(nameNftElement);
+  return penguinContainer;
 };
 
-const buildSummary = (metadata, imgContainer) => {
+const buildSummary = (metadata, imgContainer, id) => {
   const backContainer = document.createElement("div");
   backContainer.style = "width: 100%;";
   const backLabel = document.createElement("h3");
@@ -69,8 +77,11 @@ const buildSummary = (metadata, imgContainer) => {
   const summaryPortrait = document.getElementById("summaryportrait");
 
   const metadatas = document.getElementById("metadatas");
+  const kalaoContainer = document.getElementById("metadatas");
   const contents = document.getElementById("content");
   const header = document.getElementById("header");
+
+  kalaoContainer.appendChild(buildKalaoContainer(id));
 
   Object.values(metadata.attributes).forEach((meta) => {
     const infoContainer = buildInfoContainer(meta.value, meta.trait_type);
@@ -109,6 +120,25 @@ const buildInfoContainer = (metaInfo, metaTitle) => {
   content.style = "text-transform: capitalize;";
   content.textContent = metaInfo;
   info.appendChild(title);
+  info.appendChild(content);
+  return info;
+};
+
+const buildKalaoContainer = (id) => {
+  const info = document.createElement("div");
+  info.style =
+    "background-color: #ffffff; border-radius: 4px; color: initial; padding: 10px; margin: 20px; width: 40%";
+
+  const content = document.createElement("a");
+  const kalaoLogo = document.createElement("img");
+  kalaoLogo.src = "../../assets/kalao-logo-default-light.svg";
+  kalaoLogo.style = "width: 100px; height: 50px;";
+  kalaoLogo.height = "50px";
+  kalaoLogo.width = "100px";
+
+  content.href = `https://marketplace.kalao.io/token/0x96f020b13f1b8b46d70723c3a3c7b4cc6618e99e/${id}`;
+  content.target = "_blank";
+  content.appendChild(kalaoLogo);
   info.appendChild(content);
   return info;
 };

@@ -202,6 +202,28 @@
                  "width":0,
                  "x":1758.12274368231,
                  "y":1268.95306859206
+                }, 
+                {
+                 "height":83.068,
+                 "id":13,
+                 "name":"embedded",
+                 "properties":[
+                        {
+                         "name":"allowApi",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"url",
+                         "type":"string",
+                         "value":"embedded.html"
+                        }],
+                 "rotation":0,
+                 "type":"website",
+                 "visible":true,
+                 "width":109.373,
+                 "x":73.5350668675471,
+                 "y":1622.78193794076
                 }],
          "opacity":1,
          "properties":[
@@ -243,7 +265,7 @@
          "y":0
         }],
  "nextlayerid":70,
- "nextobjectid":13,
+ "nextobjectid":14,
  "orientation":"orthogonal",
  "properties":[
         {
