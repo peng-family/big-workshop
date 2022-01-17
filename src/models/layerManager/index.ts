@@ -15,41 +15,38 @@ export class LayerManager {
 
   private initializeWatchers = () => {
     this._player.tribes.forEach((tribe) => {
-      switch (tribe) {
-        case Tribes.VOLCANO:
-          this.watchVolcanoEntry();
-          break;
-        default:
-          break;
-      }
+      this.watchTribeEntry(tribe);
     });
   };
 
-  private hideVolcanoLair = () => {
+  private hideTribeEntry = (tribe: Tribes) => {
     try {
       this._audioEffect.playLockDoor();
-      this._WA.room.hideLayer("volcano");
-      this._WA.room.showLayer("volcanoBlocker");
-      this._WA.room.showLayer("volcano over player");
+      this._WA.room.hideLayer(tribe);
+      this._WA.room.showLayer(`${tribe}Blocker`);
+      this._WA.room.showLayer(`${tribe} over player`);
     } catch (err) {
       console.log(err);
     }
   };
 
-  private showVolcanoLair = () => {
+  private showTribeEntry = (tribe: Tribes) => {
     try {
       this._audioEffect.playUnlockDoor();
-      this._WA.room.showLayer("volcano");
-      this._WA.room.hideLayer("volcanoBlocker");
-      this._WA.room.hideLayer("volcano over player");
+      this._WA.room.showLayer(tribe);
+      this._WA.room.hideLayer(`${tribe}Blocker`);
+      this._WA.room.hideLayer(`${tribe} over player`);
     } catch (err) {
       console.log(err);
     }
   };
 
-  private watchVolcanoEntry = () => {
-    console.log("start watch volcano");
-    this._WA.room.onEnterLayer("volcano").subscribe(this.showVolcanoLair);
-    this._WA.room.onLeaveLayer("volcano").subscribe(this.hideVolcanoLair);
+  private watchTribeEntry = (tribe: Tribes) => {
+    this._WA.room
+      .onEnterLayer(tribe)
+      .subscribe(() => this.showTribeEntry(tribe));
+    this._WA.room
+      .onLeaveLayer(tribe)
+      .subscribe(() => this.hideTribeEntry(tribe));
   };
 }

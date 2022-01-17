@@ -30,6 +30,13 @@ export class Player {
     ) {
       this._tribes.push(Tribes.VOLCANO);
     }
+    if (
+      this._penguins.findIndex(
+        (peng) => peng.mintId === 1087 || peng.mintId === 2246
+      ) !== -1
+    ) {
+      this._tribes.push(Tribes.STORM);
+    }
   };
 
   public get tribes(): Tribes[] {
