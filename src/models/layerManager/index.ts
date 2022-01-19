@@ -17,6 +17,28 @@ export class LayerManager {
     this._player.tribes.forEach((tribe) => {
       this.watchTribeEntry(tribe);
     });
+    this.watchBuildingEntry();
+  };
+
+  private watchBuildingEntry = () => {
+    this._WA.room.onEnterLayer("roof").subscribe(() => this.enterBuilding());
+    this._WA.room.onLeaveLayer("roof").subscribe(() => this.leaveBuilding());
+  };
+
+  private enterBuilding = () => {
+    try {
+      this._WA.room.hideLayer("roof");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  private leaveBuilding = () => {
+    try {
+      this._WA.room.showLayer("roof");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   private hideTribeEntry = (tribe: Tribes) => {
