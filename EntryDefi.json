@@ -789,8 +789,17 @@
          "tilewidth":32
         }, 
         {
+         "columns":8,
          "firstgid":15470,
-         "source":"pangolin (2).tsx"
+         "image":"src\/assets\/pangolin (2).png",
+         "imageheight":736,
+         "imagewidth":256,
+         "margin":0,
+         "name":"pangolin (2)",
+         "spacing":0,
+         "tilecount":184,
+         "tileheight":32,
+         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
