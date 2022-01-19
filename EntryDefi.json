@@ -20,7 +20,7 @@
          "height":48,
          "id":95,
          "name":"twitterpangolin",
-         "opacity":1,
+         "opacity":0,
          "properties":[
                 {
                  "name":"openWebsite",
@@ -38,7 +38,7 @@
          "height":48,
          "id":94,
          "name":"Analytics pangolin",
-         "opacity":1,
+         "opacity":0,
          "properties":[
                 {
                  "name":"openWebsite",
@@ -56,7 +56,7 @@
          "height":48,
          "id":96,
          "name":"farmpangolin",
-         "opacity":1,
+         "opacity":0,
          "properties":[
                 {
                  "name":"openWebsite",
@@ -74,7 +74,7 @@
          "height":48,
          "id":97,
          "name":"buyPangolin",
-         "opacity":1,
+         "opacity":0,
          "properties":[
                 {
                  "name":"openWebsite",
@@ -92,7 +92,7 @@
          "height":48,
          "id":98,
          "name":"Poolpangolin",
-         "opacity":1,
+         "opacity":0,
          "properties":[
                 {
                  "name":"openWebsite",
@@ -284,7 +284,7 @@
          "id":2,
          "name":"floorLayer",
          "objects":[],
-         "opacity":1,
+         "opacity":0,
          "properties":[
                 {
                  "name":"allowApi",
