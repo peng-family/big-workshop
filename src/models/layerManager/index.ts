@@ -21,8 +21,8 @@ export class LayerManager {
   };
 
   private watchBuildingEntry = () => {
-    this._WA.room.onEnterLayer("roof").subscribe(() => this.enterBuilding());
-    this._WA.room.onLeaveLayer("roof").subscribe(() => this.leaveBuilding());
+    this._WA.room.onEnterLayer("hasRoof").subscribe(() => this.enterBuilding());
+    this._WA.room.onLeaveLayer("hasRoof").subscribe(() => this.leaveBuilding());
   };
 
   private enterBuilding = () => {
