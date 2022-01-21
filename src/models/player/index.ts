@@ -13,7 +13,7 @@ export class Player {
   private _account: Account;
 
   constructor(penguinContract: PenguinContract, account: Account) {
-    console.log("account",account)
+    console.log("account", account);
     this._penguinContract = penguinContract;
     this._account = account;
   }

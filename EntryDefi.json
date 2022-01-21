@@ -846,19 +846,6 @@
          "tilecount":184,
          "tileheight":32,
          "tilewidth":32
-        }, 
-        {
-         "columns":8,
-         "firstgid":15654,
-         "image":"src\/assets\/Aventuree copie.png",
-         "imageheight":11000,
-         "imagewidth":256,
-         "margin":0,
-         "name":"Aventuree copie",
-         "spacing":0,
-         "tilecount":2744,
-         "tileheight":32,
-         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
