@@ -25,14 +25,14 @@ export class Player {
     // todo: modifier ici pour vraiment target les tribes
     if (
       this._penguins.findIndex(
-        (peng) => peng.mintId === 3337 || peng.mintId === 2246
+        (peng) => peng.mintId === 3337 || peng.mintId === 2246 || peng.mintId === 2958
       ) !== -1
     ) {
       this._tribes.push(Tribes.VOLCANO);
     }
     if (
       this._penguins.findIndex(
-        (peng) => peng.mintId === 1087 || peng.mintId === 2246
+        (peng) => peng.mintId === 1087 || peng.mintId === 2246 || peng.mintId === 2958
       ) !== -1
     ) {
       this._tribes.push(Tribes.STORM);
