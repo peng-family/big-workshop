@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="https://play.workadventu.re/iframe_api.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+      integrity="sha512-/PTXSvaFzmO4So7Ghyq+DEZOz0sNLU4v1DP4gMOfY3kFu9L/IKoqSHZ6lNl3ZoZ7wT20io3vu/U4IchGcGIhfw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./../helpers/index.js"></script>
+    <script src="./../use-web3/contracts/PengFam.js"></script>
+    <script src="./../use-web3/index.js"></script>
+    <script src="./../nft-ui/generatePenguinNFT.js"></script>
+    <script src="./collection.js"></script>
+    <link rel="stylesheet" type="text/css" href="./collection.css"/>
+    <!-- <style></style> -->
+  </head>
+  <body onload="getCollection(0)">
+    <div id="header">
+      <h1>Generation 0</h1>
+      <div class="control">
+        <h3 onclick="getCollection(-1)">Previous page</h3>
+        <input
+          id="inputPage"
+          onload="setInputNumber()"
+          oninput="changePageNumber()"
+          type="number"
+        />
+        <h3 onclick="getCollection(+1)">Next page</h3>
+      </div>
+    </div>
+
+    <div class="contents" id="content"></div>
+    <div class="content summary hidden" id="summary">
+      <div class="backButton">
+        <h3 onclick="leaveSummary()">< back to the list</h3>
+      </div>
+      <div id="summaryportrait" class="metadatas"></div>
+      <div id="kalaoLink" class="kalao-link"></div>
+      <div id="metadatas" class="metadatas"></div>
+    </div>
+  </body>
+</html>
