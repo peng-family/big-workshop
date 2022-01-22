@@ -1,15 +1,15 @@
-import { AudioEffectPlayer } from "../audioPlayer";
+import { AudioPlayer } from "../audioPlayer";
 import { Player } from "../player";
 import { Tribes } from "../player/tribes";
 
 export class LayerManager {
   private _WA = window.WA;
   private _player: Player;
-  private _audioEffect: AudioEffectPlayer;
+  private _audioEffect: AudioPlayer;
 
   constructor(player: Player) {
     this._player = player;
-    this._audioEffect = new AudioEffectPlayer();
+    this._audioEffect = new AudioPlayer();
     this.initializeWatchers();
   }
 
