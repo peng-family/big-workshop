@@ -186,7 +186,29 @@
          "draworder":"topdown",
          "id":2,
          "name":"floorLayer",
-         "objects":[],
+         "objects":[
+                {
+                 "height":83.068,
+                 "id":17,
+                 "name":"embedded",
+                 "properties":[
+                        {
+                         "name":"allowApi",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"url",
+                         "type":"string",
+                         "value":"..\/embedded.html"
+                        }],
+                 "rotation":0,
+                 "type":"website",
+                 "visible":true,
+                 "width":109.373,
+                 "x":409.63291923775,
+                 "y":2488.41155353902
+                }],
          "opacity":1,
          "properties":[
                 {
@@ -263,7 +285,7 @@
          "y":0
         }],
  "nextlayerid":91,
- "nextobjectid":17,
+ "nextobjectid":18,
  "orientation":"orthogonal",
  "properties":[
         {
