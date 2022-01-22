@@ -279,7 +279,7 @@
         {
          "name":"mapImage",
          "type":"string",
-         "value":"map.png"
+         "value":"..\/src\/assets\/map.png"
         }, 
         {
          "name":"mapLink",
@@ -289,12 +289,12 @@
         {
          "name":"mapName",
          "type":"string",
-         "value":"Big workshop"
+         "value":"World of pengs"
         }, 
         {
          "name":"openWebsite",
          "type":"string",
-         "value":"iframe.html"
+         "value":".\/iframe.html"
         }, 
         {
          "name":"openWebsiteAllowApi",
@@ -304,7 +304,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":"script.js"
+         "value":".\/script.js"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
@@ -313,7 +313,7 @@
         {
          "columns":16,
          "firstgid":1,
-         "image":"src\/assets\/modern_generic.png",
+         "image":"..\/src\/assets\/modern_generic.png",
          "imageheight":1920,
          "imagewidth":512,
          "margin":0,
@@ -326,7 +326,7 @@
         {
          "columns":40,
          "firstgid":961,
-         "image":"src\/assets\/modern_walls_and_floors.png",
+         "image":"..\/src\/assets\/modern_walls_and_floors.png",
          "imageheight":1856,
          "imagewidth":1280,
          "margin":0,
@@ -339,7 +339,7 @@
         {
          "columns":6,
          "firstgid":3281,
-         "image":"src\/assets\/special-zones.png",
+         "image":"..\/src\/assets\/special-zones.png",
          "imageheight":512,
          "imagewidth":192,
          "margin":0,
@@ -362,7 +362,7 @@
         {
          "columns":16,
          "firstgid":3377,
-         "image":"src\/assets\/modern_kitchen.png",
+         "image":"..\/src\/assets\/modern_kitchen.png",
          "imageheight":1472,
          "imagewidth":512,
          "margin":0,
@@ -375,7 +375,7 @@
         {
          "columns":16,
          "firstgid":4113,
-         "image":"src\/assets\/modern_livingroom.png",
+         "image":"..\/src\/assets\/modern_livingroom.png",
          "imageheight":864,
          "imagewidth":512,
          "margin":0,
@@ -388,7 +388,7 @@
         {
          "columns":22,
          "firstgid":4545,
-         "image":"src\/assets\/modern_office.png",
+         "image":"..\/src\/assets\/modern_office.png",
          "imageheight":768,
          "imagewidth":704,
          "margin":0,
@@ -401,7 +401,7 @@
         {
          "columns":4,
          "firstgid":5073,
-         "image":"src\/assets\/sofas_chairs.png",
+         "image":"..\/src\/assets\/sofas_chairs.png",
          "imageheight":160,
          "imagewidth":128,
          "margin":0,
@@ -414,7 +414,7 @@
         {
          "columns":16,
          "firstgid":5093,
-         "image":"src\/assets\/modern_chill.png",
+         "image":"..\/src\/assets\/modern_chill.png",
          "imageheight":1568,
          "imagewidth":512,
          "margin":0,
@@ -427,7 +427,7 @@
         {
          "columns":16,
          "firstgid":5877,
-         "image":"src\/assets\/modern_art.png",
+         "image":"..\/src\/assets\/modern_art.png",
          "imageheight":960,
          "imagewidth":512,
          "margin":0,
@@ -440,7 +440,7 @@
         {
          "columns":8,
          "firstgid":6357,
-         "image":"src\/assets\/fantasy_2.png",
+         "image":"..\/src\/assets\/fantasy_2.png",
          "imageheight":2144,
          "imagewidth":256,
          "margin":0,
@@ -453,7 +453,7 @@
         {
          "columns":16,
          "firstgid":6893,
-         "image":"src\/assets\/modern_sport.png",
+         "image":"..\/src\/assets\/modern_sport.png",
          "imageheight":544,
          "imagewidth":512,
          "margin":0,
@@ -466,7 +466,7 @@
         {
          "columns":8,
          "firstgid":7165,
-         "image":"src\/assets\/fantasy_1.png",
+         "image":"..\/src\/assets\/fantasy_1.png",
          "imageheight":2112,
          "imagewidth":256,
          "margin":0,
@@ -479,7 +479,7 @@
         {
          "columns":8,
          "firstgid":7693,
-         "image":"src\/assets\/farm_exterior_tileset_by_aveontrainer_dej3gqt.png",
+         "image":"..\/src\/assets\/farm_exterior_tileset_by_aveontrainer_dej3gqt.png",
          "imageheight":1106,
          "imagewidth":256,
          "margin":0,
@@ -492,7 +492,7 @@
         {
          "columns":6,
          "firstgid":7965,
-         "image":"src\/assets\/penguinsetp.png",
+         "image":"..\/src\/assets\/penguinsetp.png",
          "imageheight":535,
          "imagewidth":192,
          "margin":0,
@@ -505,7 +505,7 @@
         {
          "columns":2,
          "firstgid":8061,
-         "image":"src\/assets\/Frame 13.png",
+         "image":"..\/src\/assets\/Frame 13.png",
          "imageheight":64,
          "imagewidth":64,
          "margin":0,
@@ -518,7 +518,7 @@
         {
          "columns":24,
          "firstgid":8065,
-         "image":"src\/assets\/aaa.png",
+         "image":"..\/src\/assets\/aaa.png",
          "imageheight":1920,
          "imagewidth":768,
          "margin":0,
@@ -531,7 +531,7 @@
         {
          "columns":8,
          "firstgid":9505,
-         "image":"src\/assets\/winter_biome_tileset_by_katanakiri98_dcmuwks.png",
+         "image":"..\/src\/assets\/winter_biome_tileset_by_katanakiri98_dcmuwks.png",
          "imageheight":1952,
          "imagewidth":256,
          "margin":0,
@@ -544,7 +544,7 @@
         {
          "columns":19,
          "firstgid":9993,
-         "image":"src\/assets\/generic_exterior.png",
+         "image":"..\/src\/assets\/generic_exterior.png",
          "imageheight":1440,
          "imagewidth":608,
          "margin":0,
@@ -557,7 +557,7 @@
         {
          "columns":16,
          "firstgid":10848,
-         "image":"src\/assets\/modern_fishing.png",
+         "image":"..\/src\/assets\/modern_fishing.png",
          "imageheight":864,
          "imagewidth":512,
          "margin":0,
@@ -570,7 +570,7 @@
         {
          "columns":16,
          "firstgid":11280,
-         "image":"src\/assets\/AAA2.png",
+         "image":"..\/src\/assets\/AAA2.png",
          "imageheight":1056,
          "imagewidth":512,
          "margin":0,
@@ -583,7 +583,7 @@
         {
          "columns":8,
          "firstgid":11808,
-         "image":"src\/assets\/Aventuree.png",
+         "image":"..\/src\/assets\/Aventuree.png",
          "imageheight":11000,
          "imagewidth":256,
          "margin":0,
@@ -596,7 +596,7 @@
         {
          "columns":5,
          "firstgid":14552,
-         "image":"src\/assets\/letters.png",
+         "image":"..\/src\/assets\/letters.png",
          "imageheight":1323,
          "imagewidth":189,
          "margin":0,
@@ -609,7 +609,7 @@
         {
          "columns":32,
          "firstgid":14757,
-         "image":"src\/assets\/celianna_japanese 1.png",
+         "image":"..\/src\/assets\/celianna_japanese 1.png",
          "imageheight":1040,
          "imagewidth":1024,
          "margin":0,
@@ -622,7 +622,7 @@
         {
          "columns":32,
          "firstgid":15781,
-         "image":"src\/assets\/medievalvillage.png",
+         "image":"..\/src\/assets\/medievalvillage.png",
          "imageheight":1694,
          "imagewidth":1040,
          "margin":0,
@@ -635,7 +635,7 @@
         {
          "columns":29,
          "firstgid":17445,
-         "image":"src\/assets\/medieval2.png",
+         "image":"..\/src\/assets\/medieval2.png",
          "imageheight":1784,
          "imagewidth":936,
          "margin":0,
@@ -648,7 +648,7 @@
         {
          "columns":120,
          "firstgid":19040,
-         "image":"src\/assets\/house.png",
+         "image":"..\/src\/assets\/house.png",
          "imageheight":3343,
          "imagewidth":3869,
          "margin":0,
