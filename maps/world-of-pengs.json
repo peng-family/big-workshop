@@ -301,7 +301,7 @@
         {
          "name":"mapImage",
          "type":"string",
-         "value":"..\/src\/assets\/map.png"
+         "value":"..\/src\/assets\/world-of-pengs.png"
         }, 
         {
          "name":"mapLink",
