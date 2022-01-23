@@ -31,6 +31,7 @@ export class Player {
       .tokensByAddress()
       .then((tokenIds) => tokenIds.map((tokenId) => new Penguin(tokenId)));
     this._inventory = new Inventory(this._totemContract);
+    await this._inventory.initialize();
   };
 
   public get inventory(): Inventory {
