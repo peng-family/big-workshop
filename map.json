@@ -375,6 +375,11 @@
          "opacity":1,
          "properties":[
                 {
+                 "name":"jistyconfig",
+                 "type":"string",
+                 "value":"{ \"startWithAudioMuted\": true }"
+                }, 
+                {
                  "name":"jitsiRoom",
                  "type":"string",
                  "value":"jitsiSpielwieseUndRevolutionRoom"
@@ -385,14 +390,9 @@
                  "value":"admin"
                 }, 
                 {
-                 "name":"jitsiTrigger",
-                 "type":"string",
-                 "value":"onaction"
-                }, 
-                {
                  "name":"openWebsite",
                  "type":"string",
-                 "value":"https:\/\/skribbl.io\/?xTaJbUNsvTHh"
+                 "value":"https:\/\/garticphone.com\/fr\/?c=00715102db"
                 }],
          "type":"tilelayer",
          "visible":true,
