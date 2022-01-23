@@ -8,14 +8,20 @@ export class Inventory {
 
   constructor(totemContract: TotemContract) {
     this._totemContract = totemContract;
-    this.initialize();
   }
 
-  private initialize = async () => {
+  public initialize = async () => {
+    await this.initializeTotems();
+  };
+
+  private initializeTotems = async () => {
     const nftIds = await this._totemContract.tokensByAddress();
-    const totems = nftIds.map((nftId) => {
-      return new Totem(nftId, this._totemContract);
+    const totemLoading: Promise<Totem>[] = [];
+    nftIds.forEach(async (nftId) => {
+      const _totem = new Totem(nftId, this._totemContract);
+      totemLoading.push(_totem.initialize());
     });
+    const totems = await Promise.all(totemLoading);
     this.keyItem = [...this.keyItem, ...totems];
   };
 }

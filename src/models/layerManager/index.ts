@@ -64,7 +64,6 @@ export class LayerManager {
   };
 
   private watchTribeEntry = (tribe: Tribes) => {
-    console.log("watchEntry:", tribe);
     this._WA.room
       .onEnterLayer(tribe)
       .subscribe(() => this.showTribeEntry(tribe));

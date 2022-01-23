@@ -14,16 +14,16 @@ export class Totem extends Item<ItemClass.KEY> {
     super(ItemClass.KEY);
     this.id = id;
     this._contract = contract;
-    this.initialize();
   }
 
-  private initialize = async () => {
+  public initialize = async () => {
     this._metadataUri = await this._contract.tokenUri(this.id);
     this._metadata = await TotemContract.getMetadata(this._metadataUri);
     this.isLoaded = true;
+    return this;
   };
 
-  public get type(): Tribes {   
+  public get type(): Tribes {
     if (this._metadata?.name.toLowerCase().indexOf(Tribes.VOLCANO) !== -1) {
       return Tribes.VOLCANO;
     } else if (this._metadata?.name.toLowerCase().indexOf(Tribes.ICE) !== -1) {

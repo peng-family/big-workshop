@@ -25,10 +25,6 @@ if (window.ethereum) {
   };
 
   const initializeMenu = async () => {
-    musicPlayer = new AudioPlayer();
-    // musicPlayer.playMusic(MUSICS.MOMMY_BUY_ME_PENG);
-    musicPlayer.playMusic(MUSICS.WALLET_FOR_2);
-    console.log("playe music");
     const totalSupply = await penguinContract.totalSupply();
     createMyPengsTab(account.address);
     createPengdexTab(totalSupply);
@@ -38,7 +34,6 @@ if (window.ethereum) {
 
   const initializeLayers = async () => {
     layerManager = new LayerManager(player);
-    console.log("layer manager initialized", player.tribes.size);
   };
 
   initialization().then(initializeMenu).then(initializeLayers);
