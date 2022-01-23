@@ -1,6 +1,6 @@
 import { AudioPlayer } from "../audioPlayer";
 import { Player } from "../player";
-import { Tribes } from "../player/tribes";
+import { Tribes } from "../items/totem/tribes";
 
 export class LayerManager {
   private _WA = window.WA;
@@ -64,6 +64,7 @@ export class LayerManager {
   };
 
   private watchTribeEntry = (tribe: Tribes) => {
+    console.log("watchEntry:", tribe);
     this._WA.room
       .onEnterLayer(tribe)
       .subscribe(() => this.showTribeEntry(tribe));

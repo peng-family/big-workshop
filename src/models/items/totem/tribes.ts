@@ -1,6 +1,6 @@
 export enum Tribes {
   VOLCANO = "volcano",
-  ICE_FOE = "iceFoe",
+  ICE = "ice",
   STORM = "storm",
-  FOREST = "forest",
+  JUNGLE = "jungle",
 }

@@ -26,6 +26,7 @@
   "dependencies": {
     "@workadventure/scripting-api-extra": "^1.2.0",
     "assert": "^2.0.0",
+    "axios": "^0.25.0",
     "bignumber.js": "^9.0.1",
     "buffer": "^6.0.3",
     "file-loader": "^6.2.0",

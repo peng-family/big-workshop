@@ -2,6 +2,7 @@ import { useWeb3 } from "../web3/index";
 import { Account } from "../models/account";
 import { PenguinContract } from "../models/penguinContract/penguinContract";
 import { Player } from "../models/player";
+import { TotemContract } from "../models/items/totem/TotemContract";
 
 export const initializeApp = async () => {
   const { web3, pengFamilyContractERC720 } = useWeb3();
@@ -14,7 +15,8 @@ export const initializeApp = async () => {
     pengFamilyContractERC720
   );
 
-  const player = new Player(penguinContract, account);
+  const totemContract = new TotemContract(account);
+  const player = new Player(penguinContract, totemContract, account);
   await player.initialize();
   return { player, penguinContract, account };
 };
