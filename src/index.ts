@@ -32,10 +32,13 @@ if (window.ethereum) {
     const totalSupply = await penguinContract.totalSupply();
     createMyPengsTab(account.address);
     createPengdexTab(totalSupply);
+    console.log(player);
+    console.log(player.inventory);
   };
 
   const initializeLayers = async () => {
     layerManager = new LayerManager(player);
+    console.log("layer manager initialized", player.tribes.size);
   };
 
   initialization().then(initializeMenu).then(initializeLayers);
