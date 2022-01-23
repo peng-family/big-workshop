@@ -1,20 +1,28 @@
 import Web3 from "web3";
 import { PenguinContract } from "../penguinContract/penguinContract";
 import { Penguin } from "../penguin";
-import { Tribes } from "./tribes";
+import { Tribes } from "../items/totem/tribes";
 import { Account } from "../account";
+import { TotemContract } from "../items/totem/TotemContract";
+import { Inventory } from "../inventory/inventory";
+import { Totem } from "../items/totem/Totem";
 
 let simpleWeb3: Web3;
 
 export class Player {
   private _penguinContract: PenguinContract;
-  private _tribes: Tribes[] = [];
+  private _totemContract: TotemContract;
   private _penguins: Penguin[] = [];
   private _account: Account;
+  private _inventory: Inventory | null = null;
 
-  constructor(penguinContract: PenguinContract, account: Account) {
-    console.log("account", account);
+  constructor(
+    penguinContract: PenguinContract,
+    totemContract: TotemContract,
+    account: Account
+  ) {
     this._penguinContract = penguinContract;
+    this._totemContract = totemContract;
     this._account = account;
   }
 
@@ -22,30 +30,25 @@ export class Player {
     this._penguins = await this._penguinContract
       .tokensByAddress()
       .then((tokenIds) => tokenIds.map((tokenId) => new Penguin(tokenId)));
-
-    console.log(this.penguins);
-
-    // todo: modifier ici pour vraiment target les tribes
-    if (
-      this._penguins.findIndex(
-        (peng) =>
-          peng.mintId === 3337 || peng.mintId === 2246 || peng.mintId === 2958
-      ) !== -1
-    ) {
-      this._tribes.push(Tribes.VOLCANO);
-    }
-    if (
-      this._penguins.findIndex(
-        (peng) =>
-          peng.mintId === 1087 || peng.mintId === 2246 || peng.mintId === 2958
-      ) !== -1
-    ) {
-      this._tribes.push(Tribes.STORM);
-    }
+    this._inventory = new Inventory(this._totemContract);
   };
 
-  public get tribes(): Tribes[] {
-    return this._tribes;
+  public get inventory(): Inventory {
+    if (this._inventory) {
+      return this._inventory;
+    } else {
+      throw new Error("Inventory not initialized. An error should occured");
+    }
+  }
+
+  public get tribes(): Set<Tribes> {
+    const tribes = new Set<Tribes>();
+    this.inventory.keyItem.forEach((item) => {
+      if (item instanceof Totem) {
+        tribes.add(item.type);
+      }
+    });
+    return tribes;
   }
 
   public get penguins(): Penguin[] {
