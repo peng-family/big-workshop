@@ -72,7 +72,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/peng-family.github.io\/music\/mommy.mp3"
+                 "value":"https:\/\/peng-family.github.io\/src\/assets\/music\/mommy.mp3"
                 }],
          "type":"tilelayer",
          "visible":true,
