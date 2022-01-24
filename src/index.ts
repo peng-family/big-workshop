@@ -28,14 +28,13 @@ if (window.ethereum) {
     account = appVars.account;
     //@ts-ignore
     window.player = player;
-    console.log("hello", window);
   };
 
   const initializeMenu = async () => {
     const totalSupply = await penguinContract.totalSupply();
     createMyPengsTab(account.address);
     createPengdexTab(totalSupply);
-    createMyInventoryTab(account.address);
+    createMyInventoryTab();
     console.log(player);
     console.log(player.inventory);
   };

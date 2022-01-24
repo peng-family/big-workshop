@@ -1,16 +1,13 @@
 const { totemsContract } = useWeb3();
 const buildKeyItemList = async () => {
-  const accountAddress = getQueryVariable("accounAddress");
   const listItemsButton = document.getElementById("key-items-button");
   if (listItemsButton) {
     listItemsButton.classList.add("selected");
   }
-  if (accountAddress) {
-    //@ts-ignore
-    window.parent[0].player.inventory.keyItems.forEach((_totem) =>
-      generateItem(_totem.metadata, _totem.id)
-    );
-  }
+  //@ts-ignore
+  window.parent[0].player.inventory.keyItems.forEach((_totem) =>
+    generateItem(_totem.metadata, _totem.id)
+  );
 };
 
 const generateItem = (metadata: any, id: number) => {
