@@ -3,7 +3,7 @@ import { Totem } from "../items/totem/Totem";
 import { TotemContract } from "../items/totem/TotemContract";
 
 export class Inventory {
-  public keyItem: Item<ItemClass.KEY>[] = [];
+  public keyItems: Item<ItemClass.KEY>[] = [];
   private _totemContract: TotemContract;
 
   constructor(totemContract: TotemContract) {
@@ -22,6 +22,6 @@ export class Inventory {
       totemLoading.push(_totem.initialize());
     });
     const totems = await Promise.all(totemLoading);
-    this.keyItem = [...this.keyItem, ...totems];
+    this.keyItems = [...this.keyItems, ...totems];
   };
 }

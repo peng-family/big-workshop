@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script src="https://play.workadventu.re/iframe_api.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+      integrity="sha512-/PTXSvaFzmO4So7Ghyq+DEZOz0sNLU4v1DP4gMOfY3kFu9L/IKoqSHZ6lNl3ZoZ7wT20io3vu/U4IchGcGIhfw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./../helpers/index.js"></script>
+    <script src="./../use-web3/contracts/PengFam.js"></script>
+    <script src="./../use-web3/contracts/pengTotemsAbi.js"></script>
+    <script src="./../use-web3/index.js"></script>
+    <script
+      type="text/babel"
+      data-type="module"
+      src="./myInventory.ts"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./myInventory.css" />
+  </head>
+  <body>
+    <div id="items-menu">
+      <div id="key-items-button" class="item-section">
+        <h3>Key items</h3>
+      </div>
+      <div id="equipment-items-button" class="item-section">
+        <h3>Equipment</h3>
+      </div>
+    </div>
+    <div id="list-items-scrollable">
+      <div id="list-items"></div>
+    </div>
+  </body>
+</html>

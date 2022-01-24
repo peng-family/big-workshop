@@ -86,4 +86,14 @@ export class Totem extends Item<ItemClass.KEY> {
       );
     }
   }
+
+  public get metadata(): ERC721Metadata {
+    if (this._metadata) {
+      return this._metadata;
+    } else {
+      throw new Error(
+        "Metadata are not loaded. An error happened during the initialization"
+      );
+    }
+  }
 }

@@ -1,4 +1,4 @@
-export const pengTotems = [
+const pengTotemAbi = [
   {
     inputs: [
       {

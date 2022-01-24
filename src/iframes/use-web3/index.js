@@ -18,7 +18,7 @@ const useWeb3 = () => {
   );
 
   const totemsContract = new web3.eth.Contract(
-    pengTotemsAbi,
+    pengTotemAbi,
     PENG_TOTEMS_CONTRACT
   );
 
