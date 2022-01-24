@@ -4,8 +4,8 @@ const buildKeyItemList = async () => {
   if (listItemsButton) {
     listItemsButton.classList.add("selected");
   }
-  //@ts-ignore
-  window.parent[0].player.inventory.keyItems.forEach((_totem) =>
+
+  window.parent[0].pengFam.player.inventory.keyItems.forEach((_totem) =>
     generateItem(_totem.metadata, _totem.id)
   );
 };

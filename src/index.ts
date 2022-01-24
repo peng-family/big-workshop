@@ -26,8 +26,6 @@ if (window.ethereum) {
     penguinContract = appVars.penguinContract;
     player = appVars.player;
     account = appVars.account;
-    //@ts-ignore
-    window.player = player;
   };
 
   const initializeMenu = async () => {
