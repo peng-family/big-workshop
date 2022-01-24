@@ -18,5 +18,14 @@ export const initializeApp = async () => {
   const totemContract = new TotemContract(account);
   const player = new Player(penguinContract, totemContract, account);
   await player.initialize();
+  window.pengFam = { player };
   return { player, penguinContract, account };
 };
+
+declare global {
+  interface Window {
+    pengFam: {
+      player: Player;
+    };
+  }
+}

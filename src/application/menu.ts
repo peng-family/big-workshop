@@ -13,9 +13,9 @@ export const createPengdexTab = (totalSupply: any) => {
   });
 };
 
-export const createMyInventoryTab = (address: string) => {
+export const createMyInventoryTab = () => {
   WA.ui.registerMenuCommand("My Inventory", {
-    iframe: `src/iframes/my-inventory/myInventory.html?accounAddress=${address}`,
+    iframe: `src/iframes/my-inventory/myInventory.html`,
     allowApi: true,
   });
 };
