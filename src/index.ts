@@ -1,7 +1,11 @@
 /// <reference path="../node_modules/@workadventure/iframe-api-typings/iframe_api.d.ts" />
 
 import { initializeApp } from "./application";
-import { createMyPengsTab, createPengdexTab } from "./application/menu";
+import {
+  createMyPengsTab,
+  createPengdexTab,
+  createMyInventoryTab,
+} from "./application/menu";
 import { Account } from "./models/account";
 import { AudioPlayer, MUSICS } from "./models/audioPlayer";
 import { LayerManager } from "./models/layerManager";
@@ -22,12 +26,16 @@ if (window.ethereum) {
     penguinContract = appVars.penguinContract;
     player = appVars.player;
     account = appVars.account;
+    //@ts-ignore
+    window.player = player;
+    console.log("hello", window);
   };
 
   const initializeMenu = async () => {
     const totalSupply = await penguinContract.totalSupply();
     createMyPengsTab(account.address);
     createPengdexTab(totalSupply);
+    createMyInventoryTab(account.address);
     console.log(player);
     console.log(player.inventory);
   };

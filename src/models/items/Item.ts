@@ -19,6 +19,7 @@ export interface ERC721Metadata {
 
 export abstract class Item<ItemClass> {
   public class: ItemClass | null;
+  public abstract id: number;
 
   constructor(type: ItemClass) {
     this.class = type;
@@ -29,4 +30,5 @@ export abstract class Item<ItemClass> {
   abstract get animation_url(): string;
   abstract get attributes(): Attribute[];
   abstract get name(): string;
+  abstract get metadata(): ERC721Metadata;
 }

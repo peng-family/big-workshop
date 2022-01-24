@@ -12,6 +12,11 @@ const getQueryVariable = (variable) => {
   console.log("Query variable %s not found", variable);
 };
 
+const buildIpfsUrl = (tokenUri) => {
+  const tmpUrl = tokenUri.substring("ipfs://".length);
+  return "https://ipfs.io/ipfs/".concat(tmpUrl);
+};
+
 const compareToSort = (a, b) => {
   if (a < b) return -1;
   if (a > b) return 1;

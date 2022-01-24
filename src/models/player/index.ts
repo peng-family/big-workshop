@@ -44,7 +44,7 @@ export class Player {
 
   public get tribes(): Set<Tribes> {
     const tribes = new Set<Tribes>();
-    this.inventory.keyItem.forEach((item) => {
+    this.inventory.keyItems.forEach((item) => {
       if (item instanceof Totem) {
         tribes.add(item.type);
       }
