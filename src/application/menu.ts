@@ -12,3 +12,10 @@ export const createPengdexTab = (totalSupply: any) => {
     allowApi: true,
   });
 };
+
+export const createMyInventoryTab = () => {
+  WA.ui.registerMenuCommand("My Inventory", {
+    iframe: `src/iframes/my-inventory/myInventory.html`,
+    allowApi: true,
+  });
+};

@@ -10,11 +10,6 @@ const generatePenguinNFT = (id) => {
     .catch((error) => console.log("error", error));
 };
 
-const buildIpfsUrl = (tokenUri) => {
-  const tmpUrl = tokenUri.substring("ipfs://".length);
-  return "https://ipfs.io/ipfs/".concat(tmpUrl);
-};
-
 const buildNFTElement = (metadata, id) => {
   const nameNftElement = buildIdNftElement(metadata.name);
   const idNftElement = buildIdNftElement(id);
