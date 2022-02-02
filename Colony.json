@@ -34,7 +34,7 @@
                  "type":"",
                  "visible":true,
                  "width":229.635001208605,
-                 "x":1252.11505922166,
+                 "x":1250.17857587542,
                  "y":294.89968576263
                 }, 
                 {
@@ -50,8 +50,8 @@
                  "rotation":0,
                  "type":"zone",
                  "visible":true,
-                 "width":941.780821917808,
-                 "x":325.342465753425,
+                 "width":911.023846368011,
+                 "x":344.637326304206,
                  "y":2.44618395303327
                 }],
          "opacity":1,
@@ -66,24 +66,7 @@
          "name":"focusable meeting",
          "objects":[
                 {
-                 "height":746.086105675147,
-                 "id":18,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"focusable",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":949.119373776908,
-                 "x":325.342465753425,
-                 "y":9.78473581213307
-                }, 
-                {
-                 "height":347.358121330724,
+                 "height":340.13877347848,
                  "id":21,
                  "name":"focusable meeting",
                  "properties":[
@@ -95,8 +78,8 @@
                  "rotation":0,
                  "type":"zone",
                  "visible":true,
-                 "width":212.818003913894,
-                 "x":1264.6771037182,
+                 "width":194.132484862371,
+                 "x":1279.48665377748,
                  "y":298.434442270059
                 }],
          "opacity":1,
@@ -119,9 +102,19 @@
          "opacity":1,
          "properties":[
                 {
+                 "name":"jistiMeeting",
+                 "type":"string",
+                 "value":"meeting"
+                }, 
+                {
                  "name":"jistiRoom",
                  "type":"string",
                  "value":"meeting"
+                }, 
+                {
+                 "name":"jitsiconfig",
+                 "type":"string",
+                 "value":"{ \"startWithAudioMuted\": true }"
                 }],
          "type":"tilelayer",
          "visible":true,
