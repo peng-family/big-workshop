@@ -1,5 +1,5 @@
 export const contracts = () => {
-  const staging = true;
+  const staging = false;
   if (staging) {
     return {
       totemContract: "0x165F4EF81F3e055ffDE90c0bd51Fc26b7798a164",
@@ -7,7 +7,7 @@ export const contracts = () => {
     };
   } else {
     return {
-      totemContract: "0x165F4EF81F3e055ffDE90c0bd51Fc26b7798a164",
+      totemContract: "0xfd48de401e23f619a25a0edcf6d249216860fbe6",
       pengContract: "0x96f020b13f1b8b46d70723c3a3c7b4cc6618e99e",
     };
   }
