@@ -1,5 +1,3 @@
-import { TotemContract } from "./totem/TotemContract";
-
 export enum ItemClass {
   KEY = "key",
 }

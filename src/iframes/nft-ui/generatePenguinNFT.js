@@ -1,6 +1,10 @@
 const { web3, pengFamilyContractERC720 } = useWeb3();
 simpleWeb3 = web3;
 
+const generatePenguinNFTFromPeng = (peng) => {
+  return buildNFTElement(peng.metadata, peng.id);
+};
+
 const generatePenguinNFT = (id) => {
   return pengFamilyContractERC720.methods
     .tokenURI(id)

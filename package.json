@@ -24,12 +24,15 @@
     "fix": "node_modules/.bin/eslint --fix src/ . --ext .ts"
   },
   "dependencies": {
+    "@firebase/auth": "^0.19.7",
+    "@metamask/detect-provider": "^1.2.0",
     "@workadventure/scripting-api-extra": "^1.2.0",
     "assert": "^2.0.0",
     "axios": "^0.25.0",
     "bignumber.js": "^9.0.1",
     "buffer": "^6.0.3",
     "file-loader": "^6.2.0",
+    "firebase": "^9.6.5",
     "os-browserify": "^0.3.0",
     "react": "^17.0.2",
     "web3": "^1.6.1"

@@ -2,20 +2,18 @@ import Web3 from "web3";
 import { Contract } from "web3-eth-contract";
 import axios, { AxiosResponse } from "axios";
 
-import { Account } from "../../account";
-import { ERC721Metadata } from "../Item";
+import { Account } from "../../../account";
+import { ERC721Metadata } from "../../Item";
 import { pengTotemAbi } from "./pengTotemsAbi";
-import { contracts } from "../../network/networks";
+import { contracts } from "../../../network/networks";
 
 export class TotemContract {
   private _totemContract: Contract;
   private _account: Account;
 
-  constructor(account: Account) {
+  constructor(web3: Web3, account: Account) {
     const { totemContract } = contracts();
-    //@ts-ignore
-    const ETHEREUM = window.ethereum;
-    const web3 = new Web3(ETHEREUM);
+    console.log(web3);
     const totemsContract = new web3.eth.Contract(
       pengTotemAbi as any,
       totemContract
