@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
 import { Account } from "../../account";
 import { ERC721Metadata } from "../Item";
 import { pengTotemAbi } from "./pengTotemsAbi";
-import { contracts } from "./../networks";
+import { contracts } from "../../network/networks";
 
 export class TotemContract {
   private _totemContract: Contract;

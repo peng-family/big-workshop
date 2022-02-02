@@ -1,6 +1,8 @@
 import Web3 from "web3";
 
 import { Contract } from "web3-eth-contract";
+import { avaxPenguin } from "./PengFam";
+import { contracts } from "./../network/networks";
 import { Account } from "../account";
 
 export class PenguinContract {
@@ -8,14 +10,18 @@ export class PenguinContract {
   private _penguinERC720Contract: Contract;
   private _account: Account;
 
-  constructor(
-    web3Instance: Web3,
-    account: Account,
-    penguinERC720Contract: Contract
-  ) {
+  constructor(web3Instance: Web3, account: Account) {
+    const { pengContract } = contracts();
+
     this._web3 = web3Instance;
     this._account = account;
-    this._penguinERC720Contract = penguinERC720Contract;
+    //@ts-ignore
+    const ETHEREUM = window.ethereum;
+    const web3 = new Web3(ETHEREUM);
+    this._penguinERC720Contract = new web3.eth.Contract(
+      avaxPenguin.abi as any,
+      pengContract
+    );
   }
 
   public totalSupply = async () => {
