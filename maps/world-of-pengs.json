@@ -147,7 +147,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":""
+                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/FishyNets,WinyFest.wav"
                 }],
          "type":"tilelayer",
          "visible":true,
