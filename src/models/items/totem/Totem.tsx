@@ -1,6 +1,6 @@
 import { Account } from "../../account";
 import { Attribute, ERC721Metadata, Item, ItemClass } from "../Item";
-import { TotemContract } from "./TotemContract";
+import { TotemContract } from "./totem_contract/TotemContract";
 import { Tribes } from "./tribes";
 
 export class Totem extends Item<ItemClass.KEY> {

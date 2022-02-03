@@ -1,6 +1,6 @@
 import { Item, ItemClass } from "../items/Item";
 import { Totem } from "../items/totem/Totem";
-import { TotemContract } from "../items/totem/TotemContract";
+import { TotemContract } from "../items/totem/totem_contract/TotemContract";
 
 export class Inventory {
   public keyItems: Item<ItemClass.KEY>[] = [];

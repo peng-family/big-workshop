@@ -1,9 +1,9 @@
 import Web3 from "web3";
-import { PenguinContract } from "../penguinContract/penguinContract";
+import { PenguinContract } from "../penguin/penguinContract/penguinContract";
 import { Penguin } from "../penguin";
 import { Tribes } from "../items/totem/tribes";
 import { Account } from "../account";
-import { TotemContract } from "../items/totem/TotemContract";
+import { TotemContract } from "../items/totem/totem_contract/TotemContract";
 import { Inventory } from "../inventory/inventory";
 import { Totem } from "../items/totem/Totem";
 
@@ -29,7 +29,13 @@ export class Player {
   public initialize = async () => {
     this._penguins = await this._penguinContract
       .tokensByAddress()
-      .then((tokenIds) => tokenIds.map((tokenId) => new Penguin(tokenId)));
+      .then((tokenIds) =>
+        tokenIds.map((tokenId) => {
+          const _peng = new Penguin(tokenId, this._penguinContract);
+          _peng.initialize();
+          return _peng;
+        })
+      );
     this._inventory = new Inventory(this._totemContract);
     await this._inventory.initialize();
   };

@@ -9,7 +9,7 @@ import {
 import { Account } from "./models/account";
 import { AudioPlayer, MUSICS } from "./models/audioPlayer";
 import { LayerManager } from "./models/layerManager";
-import { PenguinContract } from "./models/penguinContract/penguinContract";
+import { PenguinContract } from "./models/penguin/penguinContract/penguinContract";
 import { Player } from "./models/player";
 
 let layerManager: LayerManager;
@@ -23,9 +23,11 @@ console.log(window);
 if (window.ethereum) {
   const initialization = async () => {
     const appVars = await initializeApp();
-    penguinContract = appVars.penguinContract;
-    player = appVars.player;
-    account = appVars.account;
+    if (appVars) {
+      penguinContract = appVars.penguinContract;
+      player = appVars.player;
+      account = appVars.account;
+    }
   };
 
   const initializeMenu = async () => {

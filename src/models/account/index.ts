@@ -1,12 +1,10 @@
 import BigNumber from "bignumber.js";
 import Web3 from "web3";
+import { AuthService } from "../auth/auth";
 
 export class Account {
-  private _web3: Web3;
   private _address: string | null = null;
-  constructor(web3Instance: Web3) {
-    this._web3 = web3Instance;
-  }
+  constructor(private _web3: Web3, private _authService: AuthService) {}
 
   public initializeAccount = async () => {
     if (!this._address) {
