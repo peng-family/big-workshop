@@ -1,36 +1,70 @@
-import { Auth, signOut } from "@firebase/auth";
-import detectEthereumProvider from '@metamask/detect-provider';
+import axios, { AxiosResponse } from "axios";
+import {
+  Auth,
+  signOut,
+  getAuth,
+  signInWithCustomToken,
+  UserCredential,
+} from "@firebase/auth";
+import detectEthereumProvider from "@metamask/detect-provider";
+import Web3 from "web3";
+
+interface NonceResponse {
+  nonce: string;
+}
+interface VerifyResponse {
+  token: string;
+}
 
 export class AuthService {
-  constructor(private http: any, private auth: Auth) {}
+  private _web3: Web3;
+  private _auth: Auth;
+  private _credential?: UserCredential;
+  constructor(web3: Web3, auth: Auth) {
+    this._web3 = web3;
+    this._auth = auth;
+  }
   public signOut() {
-    return signOut(this.auth);
+    return signOut(this._auth);
   }
-  public signInWithMetaMask() {
+  public signInWithMetaMask = async () => {
     let ethereum: any;
-    //   return from(detectEthereumProvider()).pipe(
-    //     // Step 1: Request (limited) access to users ethereum account
-    //     switchMap(async (provider) => {
-    //     }),
-    //     // Step 2: Retrieve the current nonce for the requested address
-    //     switchMap(() =>
-    //     ),
-    //     // Step 3: Get the user to sign the nonce with their private key
-    //     switchMap(
-    //       async (response) =>
-    //         //
-    //     ),
-    //     // Step 4: If the signature is valid, retrieve a custom auth token for Firebase
-    //     switchMap((sig) =>
-    //         //
-    //     ),
-    //     // Step 5: Use the auth token to auth with Firebase
-    //     switchMap(
-    //       async (response) =>
-    //         //
-    //     )
-    //   );
-  }
+    const provider = await detectEthereumProvider();
+    if (!provider) {
+      throw new Error("Please install MetaMask");
+    }
+    ethereum = provider;
+    console.log(1, ethereum);
+    const address = await ethereum.request({ method: "eth_requestAccounts" });
+    const response = (
+      await axios.post<{ address: string }, AxiosResponse<NonceResponse>>(
+        "https://us-central1-world-of-pengs-game.cloudfunctions.net/getNonceToSign",
+        {
+          address: ethereum.selectedAddress,
+        }
+      )
+    ).data;
+
+    const signature = await ethereum.request({
+      method: "personal_sign",
+      params: [`0x${this.toHex(response.nonce)}`, ethereum.selectedAddress],
+    });
+
+    const verifiedResponse: VerifyResponse = (
+      await axios.post<
+        { address: String; signature: String },
+        AxiosResponse<VerifyResponse>
+      >(
+        "https://us-central1-world-of-pengs-game.cloudfunctions.net/verifySignedMessage",
+        { address: ethereum.selectedAddress, signature: signature }
+      )
+    ).data;
+
+    this._credential = await signInWithCustomToken(
+      this._auth,
+      verifiedResponse.token
+    );
+  };
   private toHex(stringToConvert: string) {
     return stringToConvert
       .split("")

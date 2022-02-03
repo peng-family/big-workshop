@@ -3,11 +3,18 @@ import { Account } from "../models/account";
 import { PenguinContract } from "../models/penguin/penguinContract/penguinContract";
 import { Player } from "../models/player";
 import { TotemContract } from "../models/items/totem/totem_contract/TotemContract";
+import { AuthService } from "../models/auth/auth";
+import { getAuth } from "@firebase/auth";
+import { initFirebase } from "../models/auth/initFirebase";
 
 export const initializeApp = async () => {
   const web3 = await useWeb3();
   if (web3) {
-    const account = new Account(web3);
+    const { app } = initFirebase();
+    const auth = getAuth();
+    const authService = new AuthService(web3, auth);
+    await authService.signInWithMetaMask();
+    const account = new Account(web3, authService);
     await account.initializeAccount();
     const penguinContract = new PenguinContract(web3, account);
     const totemContract = new TotemContract(web3, account);

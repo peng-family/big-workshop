@@ -18,6 +18,12 @@ export class PenguinContract {
       avaxPenguin.abi as any,
       pengContract
     );
+    // this._penguinContract.
+    // console.log(
+    //   Web3.utils.hexToAscii(
+    //     "0x51ed82880000000000000000000000000000000000000000000000000000000000015790"
+    //   )
+    // );
   }
 
   public totalSupply = async () => {

@@ -9,7 +9,7 @@ export class Penguin {
   public id: number;
 
   constructor(id: number, contract: PenguinContract) {
-    this._penguinContract = contract;
+    this._penguinContract = contract;    
     this.id = id;
   }
 
