@@ -13,7 +13,7 @@ export const initializeApp = async () => {
     const { app } = initFirebase();
     const auth = getAuth();
     const authService = new AuthService(web3, auth);
-    await authService.signInWithMetaMask();
+    // await authService.signInWithMetaMask();
     const account = new Account(web3, authService);
     await account.initializeAccount();
     const penguinContract = new PenguinContract(web3, account);

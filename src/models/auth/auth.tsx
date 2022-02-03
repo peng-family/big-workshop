@@ -9,6 +9,22 @@ import {
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
 
+const uriListLocal = {
+  getNonceToSign:
+    "http://localhost:5001/world-of-pengs-game/us-central1/getNonceToSign",
+  verifySignedMessage:
+    "http://localhost:5001/world-of-pengs-game/us-central1/verifySignedMessage",
+  verifyQuest:
+    "http://localhost:5001/world-of-pengs-game/us-central1/verifyQuest",
+};
+
+const uriListProd = {
+  getNonceToSign:
+    "https://us-central1-world-of-pengs-game.cloudfunctions.net/getNonceToSign",
+  verifySignedMessage:
+    "https://us-central1-world-of-pengs-game.cloudfunctions.net/verifySignedMessage",
+};
+
 interface NonceResponse {
   nonce: string;
 }
@@ -38,7 +54,7 @@ export class AuthService {
     const address = await ethereum.request({ method: "eth_requestAccounts" });
     const response = (
       await axios.post<{ address: string }, AxiosResponse<NonceResponse>>(
-        "https://us-central1-world-of-pengs-game.cloudfunctions.net/getNonceToSign",
+        uriListLocal.getNonceToSign,
         {
           address: ethereum.selectedAddress,
         }
@@ -50,15 +66,22 @@ export class AuthService {
       params: [`0x${this.toHex(response.nonce)}`, ethereum.selectedAddress],
     });
 
-    const verifiedResponse: VerifyResponse = (
-      await axios.post<
-        { address: String; signature: String },
-        AxiosResponse<VerifyResponse>
-      >(
-        "https://us-central1-world-of-pengs-game.cloudfunctions.net/verifySignedMessage",
-        { address: ethereum.selectedAddress, signature: signature }
-      )
+    const verifiedResponse = { token: "hello" };
+    // const verifiedResponse: VerifyResponse = (
+    //   await axios.post<
+    //     { address: String; signature: String },
+    //     AxiosResponse<VerifyResponse>
+    //   >(uriListLocal.verifySignedMessage, {
+    //     address: ethereum.selectedAddress,
+    //     signature: signature,
+    //   })
+    // ).data;
+
+    const test: any = (
+      await axios.post<null, AxiosResponse<any>>(uriListLocal.verifyQuest)
     ).data;
+
+    console.log("OUAISCH", test);
 
     this._credential = await signInWithCustomToken(
       this._auth,
