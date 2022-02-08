@@ -6,6 +6,7 @@ import {
   createPengdexTab,
   createMyInventoryTab,
 } from "./application/menu";
+import { initializeBetaQuest } from "./application/beta-quest/betaQuest";
 import { Account } from "./models/account";
 import { AudioPlayer, MUSICS } from "./models/audioPlayer";
 import { LayerManager } from "./models/layerManager";
@@ -22,11 +23,15 @@ console.log(window);
 //@ts-ignore
 if (window.ethereum) {
   const initialization = async () => {
-    const appVars = await initializeApp();
-    if (appVars) {
-      penguinContract = appVars.penguinContract;
-      player = appVars.player;
-      account = appVars.account;
+    try {
+      const appVars = await initializeApp();
+      if (appVars) {
+        penguinContract = appVars.penguinContract;
+        player = appVars.player;
+        account = appVars.account;
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -35,6 +40,7 @@ if (window.ethereum) {
     createMyPengsTab(account.address);
     createPengdexTab(totalSupply);
     createMyInventoryTab();
+    initializeBetaQuest();
     console.log(player);
     console.log(player.inventory);
   };
