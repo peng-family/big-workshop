@@ -4,7 +4,8 @@ import Dialogs from "./dialogs";
 
 const WA = window.WA;
 export const initializeBetaQuest = async () => {
-  let helloPeng: any;  
+  let popupIsOpen = false;
+  let helloPeng: any;
 
   Dialogs.forEach((dialog) => {
     helloPeng = WA.room
@@ -12,7 +13,9 @@ export const initializeBetaQuest = async () => {
       .subscribe(async () => {
         let continueDialogue = true;
         for (let i = 0; i < dialog.sequence.length; i++) {
+          WA.controls.disablePlayerControls();
           if (continueDialogue) {
+            popupIsOpen = true;
             await dialoguePromise(
               dialog.sequence[i].rectangleName,
               dialog.sequence[i].speech,
@@ -22,9 +25,11 @@ export const initializeBetaQuest = async () => {
             });
           }
         }
+        WA.controls.restorePlayerControls();
       });
 
     WA.room.onLeaveLayer(`betaQuest/${dialog.layerName}`).subscribe(() => {
+      console.log("leaving");
       helloPeng.close();
     });
   });
