@@ -1,19 +1,19 @@
 import { IDialog } from "../dialogModels";
-export const peng2Dialog: IDialog = {
-  layerName: "peng2",
+export const pengxDialog: IDialog = {
+  layerName: "pengx",
   goFuckYourself: {
-    rectangleName: "peng2Dialog",
+    rectangleName: "pengxDialog",
     speech: "Go ot see the first peng !",
     answers: [{ answer: "peng peng !", close: true }],
   },
   sequence: [
     {
-      rectangleName: "peng2Dialog",
+      rectangleName: "pengxDialog",
       speech: "Peng peng my fellow peng !",
       answers: [{ answer: "peng peng !" }, { answer: "peng..", close: true }],
     },
     {
-      rectangleName: "peng2Dialog",
+      rectangleName: "pengxDialog",
       speech: "I am the second peng ! \n And the real quest start right now !",
       answers: [{ answer: "Peng !" }],
     },

@@ -1,5 +1,5 @@
 import { IDialog } from "../dialogModels";
-export const peng1Dialog: IDialog = {
+export const peng2Dialog: IDialog = {
   layerName: "peng2",
   sequence: [
     {
