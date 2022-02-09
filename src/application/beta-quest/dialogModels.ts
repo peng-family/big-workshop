@@ -18,6 +18,9 @@ export interface IDialogSequence {
 
 export interface IDialog {
   layerName: string;
+  stepName: string;
+  require?: string;
   sequence: IDialogSequence[];
-  goFuckYourself?: IDialogSequence;
+  needPreviousStep?: IDialogSequence;
+  alreadySeen?: IDialogSequence;
 }

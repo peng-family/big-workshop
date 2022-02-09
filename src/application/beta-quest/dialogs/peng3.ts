@@ -1,6 +1,8 @@
 import { IDialog } from "../dialogModels";
 export const peng3Dialog: IDialog = {
   layerName: "peng3",
+  stepName: "peng3",
+  require: "peng2",
   sequence: [
     {
       rectangleName: "dialog3",

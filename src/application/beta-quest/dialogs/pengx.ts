@@ -1,7 +1,8 @@
 import { IDialog } from "../dialogModels";
 export const pengxDialog: IDialog = {
   layerName: "pengx",
-  goFuckYourself: {
+  stepName: "pengx",
+  needPreviousStep: {
     rectangleName: "pengxDialog",
     speech: "Go ot see the first peng !",
     answers: [{ answer: "peng peng !", close: true }],
