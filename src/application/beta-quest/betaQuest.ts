@@ -4,24 +4,59 @@ import Dialogs from "./dialogs";
 
 const WA = window.WA;
 export const initializeBetaQuest = async () => {
-  let helloPeng: any;  
+  const alreadySeen = new Set<string>();
+  let helloPeng: any;
 
   Dialogs.forEach((dialog) => {
     helloPeng = WA.room
       .onEnterLayer(`betaQuest/${dialog.layerName}`)
       .subscribe(async () => {
         let continueDialogue = true;
-        for (let i = 0; i < dialog.sequence.length; i++) {
-          if (continueDialogue) {
+        WA.controls.disablePlayerControls();
+        if (!alreadySeen.has(dialog.stepName)) {
+          if (
+            !dialog.require ||
+            (dialog.require && alreadySeen.has(dialog.require))
+          ) {
+            console.log("ok 2");
+            for (let i = 0; i < dialog.sequence.length; i++) {
+              
+              if (continueDialogue) {
+                await dialoguePromise(
+                  dialog.sequence[i].rectangleName,
+                  dialog.sequence[i].speech,
+                  dialog.sequence[i].answers
+                ).catch(() => {
+                  continueDialogue = false;
+                });
+                if (i === dialog.sequence.length - 1) {
+                  alreadySeen.add(dialog.stepName);
+                }
+              }
+            }
+          } else if (
+            dialog.require &&
+            !alreadySeen.has(dialog.require) &&
+            dialog.needPreviousStep
+          ) {
             await dialoguePromise(
-              dialog.sequence[i].rectangleName,
-              dialog.sequence[i].speech,
-              dialog.sequence[i].answers
+              dialog.needPreviousStep?.rectangleName,
+              dialog.needPreviousStep?.speech,
+              dialog.needPreviousStep?.answers
             ).catch(() => {
               continueDialogue = false;
             });
           }
+        } else if (dialog.alreadySeen) {
+          await dialoguePromise(
+            dialog.alreadySeen?.rectangleName,
+            dialog.alreadySeen?.speech,
+            dialog.alreadySeen?.answers
+          ).catch(() => {
+            continueDialogue = false;
+          });
         }
+        WA.controls.restorePlayerControls();
       });
 
     WA.room.onLeaveLayer(`betaQuest/${dialog.layerName}`).subscribe(() => {
