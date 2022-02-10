@@ -9,11 +9,7 @@ export const peng1Dialog: IDialog = {
         "Dear Peng, You are more than welcome in the PengVerse. A lot of things have changed and it's time for your to discover it. As an OGs you now have the possibility to complete your first quest. You have only one objective, be the first to send the code in discord. Are you ready ?",
       answers: [
         { answer: "Hell yeah" },
-        { answer: "Don't think I want to do this", buttonColor: "success" },
-        { answer: "No", buttonColor: "primary" },
-        { answer: "Peng Chat ?", buttonColor: "disabled", close: true },
-        { answer: "Not an option", buttonColor: "warning", close: true },
-        { answer: "No sorry", buttonColor: "error", close: true },
+        { answer: "I prefer to wait !", buttonColor: "disabled", close: true },
       ],
     },
     {
@@ -23,4 +19,10 @@ export const peng1Dialog: IDialog = {
       answers: [{ answer: "Let's go Peng peng !" }],
     },
   ],
+  alreadySeen: {
+  rectangleName: "peng2Dialog",
+  speech:
+    "My fellow peng. We already talked together. Go on the DeFi Island and find the number 1.",
+  answers: [{ answer: "Peng peng !" }],
+  },
 };

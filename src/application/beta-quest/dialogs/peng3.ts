@@ -5,21 +5,41 @@ export const peng3Dialog: IDialog = {
   require: "peng2",
   sequence: [
     {
-      rectangleName: "dialog3",
-      speech: "OMG, what are you doing here ?",
+      rectangleName: "peng3Dialog",
+      speech:
+        "Nice to see you here, you've got the first digit, ready to find the second one ? ",
       answers: [
-        { answer: "Looking for the seconde number dude!" },
-        { answer: "I have f**ing idea", buttonColor: "error", close: true },
+        { answer: "You bet I am" },
+        { answer: "Need to rest a bit now", buttonColor: "error", close: true },
       ],
     },
     {
-      rectangleName: "dialog3",
-      speech: "Now I feel better, it is time to check if you now the Peng Fam project. The second numer of the code is equal to the number of different types of totem !",
+      rectangleName: "peng3Dialog",
+      speech:
+        "I see that you know this Island, but are you aware of what’s happening in this space. What is the last product launched by Trader Joe ?",
       answers: [
-          { answer: "What ?", close: true },
-          { answer: "Ok, i have it" },
-        ],
+        { answer: "NFT Market place ", close: true },
+        { answer: "A CEX ", close: true },
+        { answer: "Rocket Joe" },
+        { answer: "Lending protocol", close: true },
+      ],
     },
-    
+    {
+      rectangleName: "peng3Dialog",
+      speech:
+        "First you know DeFi and now ,all the fresh infos. Let me give you the second digit, but that won’t be that easy. The second digit is the first digit of the golden ratio. Now go and see my friend with an Orange T shirt on the NFT and Community Island",
+      answers: [{ answer: "Got it Thanks !" }],
+    },
   ],
+  needPreviousStep: {
+    rectangleName: "peng3Dialog",
+    speech: "My fellow peng. You need to see the peng number 1 before me.",
+    answers: [{ answer: "Peng peng ! Love u peng" }],
+  },
+  alreadySeen: {
+    rectangleName: "peng3Dialog",
+    speech:
+      "My fellow peng. We already talked together. We are done.",
+    answers: [{ answer: "Peng peng ! Love u" }],
+  },
 };

@@ -19,7 +19,7 @@ export const peng2Dialog: IDialog = {
         "Alright, but first you need to show me that you now this Island. The first question I have is about... BENQI ! Can you explain me what is this product ? ",
       answers: [
         { answer: "This is Decentralised Exchange, a DEX", close: true },
-        { answer: "This is a liquidity market protocol" },
+        { answer: "Lending and Borrowing Protocol" },
         { answer: "This is an NFT Project", close: true },
       ],
     },
@@ -32,7 +32,7 @@ export const peng2Dialog: IDialog = {
   ],
   needPreviousStep: {
     rectangleName: "peng2Dialog",
-    speech: "My fellow peng. You need to see the first peng before me.",
+    speech: "My fellow peng. You need to see the first peng before me. Go on the start here area",
     answers: [{ answer: "Peng peng !" }],
   },
   alreadySeen: {
