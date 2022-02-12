@@ -220,7 +220,7 @@
                 {
                  "name":"openWebsite",
                  "type":"string",
-                 "value":"https:\/\/www.pokernow.club\/mtt\/peng-poker-club-MKqSeQMHeo"
+                 "value":"https:\/\/www.pokernow.club\/games\/"
                 }],
          "type":"tilelayer",
          "visible":true,
