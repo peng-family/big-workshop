@@ -216,11 +216,6 @@
                  "name":"jitsyconfig",
                  "type":"string",
                  "value":"{ \"startWithAudioMuted\": true }"
-                }, 
-                {
-                 "name":"openWebsite",
-                 "type":"string",
-                 "value":"https:\/\/www.pokernow.club\/games\/"
                 }],
          "type":"tilelayer",
          "visible":true,
