@@ -157,6 +157,11 @@
                  "name":"jitsyconfig",
                  "type":"string",
                  "value":"{ \"startWithAudioMuted\": true }"
+                }, 
+                {
+                 "name":"openWebsite",
+                 "type":"string",
+                 "value":"https:\/\/www.pokernow.club\/games\/dttPioros4OQ9xpuTF7m713km"
                 }],
          "type":"tilelayer",
          "visible":true,
