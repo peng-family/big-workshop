@@ -36,17 +36,25 @@ if (window.ethereum) {
   };
 
   const initializeMenu = async () => {
-    const totalSupply = await penguinContract.totalSupply();
-    createMyPengsTab(account.address);
-    createPengdexTab(totalSupply);
-    createMyInventoryTab();
+    try {
+      const totalSupply = await penguinContract.totalSupply();
+      createMyPengsTab(account.address);
+      createPengdexTab(totalSupply);
+      createMyInventoryTab();
+    } catch (error) {
+      console.log(error);
+    }
     initializeBetaQuest();
-    console.log(player);
-    console.log(player.inventory);
+    // console.log(player);
+    // console.log(player.inventory);
   };
 
   const initializeLayers = async () => {
-    layerManager = new LayerManager(player);
+    try {
+      layerManager = new LayerManager(player);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   initialization().then(initializeMenu).then(initializeLayers);
