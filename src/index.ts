@@ -7,6 +7,7 @@ import {
   createMyInventoryTab,
 } from "./application/menu";
 import { initializeBetaQuest } from "./application/beta-quest/betaQuest";
+import { initializeBoardsEnv } from "./application/environment/boardsProcessor";
 import { Account } from "./models/account";
 import { AudioPlayer, MUSICS } from "./models/audioPlayer";
 import { LayerManager } from "./models/layerManager";
@@ -45,6 +46,7 @@ if (window.ethereum) {
       console.log(error);
     }
     initializeBetaQuest();
+    initializeBoardsEnv();
     // console.log(player);
     // console.log(player.inventory);
   };
