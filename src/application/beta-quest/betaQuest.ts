@@ -18,7 +18,6 @@ export const initializeBetaQuest = async () => {
             !dialog.require ||
             (dialog.require && alreadySeen.has(dialog.require))
           ) {
-            console.log("ok 2");
             for (let i = 0; i < dialog.sequence.length; i++) {
               
               if (continueDialogue) {

@@ -13,7 +13,6 @@ export class TotemContract {
 
   constructor(web3: Web3, account: Account) {
     const { totemContract } = contracts();
-    console.log(web3);
     const totemsContract = new web3.eth.Contract(
       pengTotemAbi as any,
       totemContract
