@@ -37,13 +37,15 @@ if (window.ethereum) {
   };
 
   const initializeMenu = async () => {
-    try {
-      const totalSupply = await penguinContract.totalSupply();
-      createMyPengsTab(account.address);
-      createPengdexTab(totalSupply);
-      createMyInventoryTab();
-    } catch (error) {
-      console.log(error);
+    if (player) {
+      try {
+        const totalSupply = await penguinContract.totalSupply();
+        createMyPengsTab(account.address);
+        createPengdexTab(totalSupply);
+        createMyInventoryTab();
+      } catch (error) {
+        console.log(error);
+      }
     }
     initializeBetaQuest();
     initializeBoardsEnv();
@@ -52,10 +54,12 @@ if (window.ethereum) {
   };
 
   const initializeLayers = async () => {
-    try {
-      layerManager = new LayerManager(player);
-    } catch (err) {
-      console.error(err);
+    if (player) {
+      try {
+        layerManager = new LayerManager(player);
+      } catch (err) {
+        console.error(err);
+      }
     }
   };
 
