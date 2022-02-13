@@ -27,7 +27,7 @@ export const peng6Dialog: IDialog = {
     {
       rectangleName: "peng6Dialog",
       speech:
-        "You know my community and I am happy to see that ! Here is the 5th digit, but I won’t give it to you, go check the sign on your right      Let’s do some math. Solve this and you have the number : (3+10)x0+2     You have it now ?",
+        "You know my community and I am happy to see that ! Here is the 5th digit, but I won’t give it to you, Let’s do some math. Solve this and you have the digit : (3+10)x0+2     You have it now ?",
       answers: [{ answer: "Got it Thanks !" }],
     },
   ],
