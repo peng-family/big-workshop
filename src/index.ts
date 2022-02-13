@@ -19,7 +19,6 @@ let account: Account;
 let penguinContract: PenguinContract;
 let player: Player;
 let musicPlayer: AudioPlayer;
-console.log(window);
 
 //@ts-ignore
 if (window.ethereum) {

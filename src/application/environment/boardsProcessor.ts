@@ -7,7 +7,6 @@ export const initializeBoardsEnv = async () => {
   let helloPeng: any;
 
   Boards.forEach((board) => {
-    console.log("subscribe to ", `boards/${board.layerName}`);
     helloPeng = WA.room
       .onEnterLayer(`boards/${board.layerName}`)
       .subscribe(async () => {
