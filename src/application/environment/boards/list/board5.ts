@@ -1,4 +1,4 @@
-import { IBoard } from "../dialogModels";
+import { IBoard } from "../../dialogModels";
 export const board5: IBoard = {
   layerName: "board5",
   dialog: {

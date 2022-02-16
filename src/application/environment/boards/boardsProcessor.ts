@@ -1,6 +1,6 @@
 import { ButtonDescriptor } from "@workadventure/iframe-api-typings/Api/iframe/Ui/ButtonDescriptor";
-import { IDialogAnswer } from "./dialogModels";
-import Boards from "./boards";
+import { IDialogAnswer } from "../dialogModels";
+import Boards from "./list";
 
 const WA = window.WA;
 export const initializeBoardsEnv = async () => {

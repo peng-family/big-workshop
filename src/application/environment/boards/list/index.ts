@@ -7,7 +7,7 @@ import { board5 } from "./board5";
 import { board6 } from "./board6";
 import { board7 } from "./board7";
 import { board8 } from "./board8";
-import { IBoard } from "../dialogModels";
+import { IBoard } from "../../dialogModels";
 
 export default [
     boardKalao,

@@ -17,6 +17,8 @@ export class LayerManager {
     this._player.tribes.forEach((tribe) => {
       this.watchTribeEntry(tribe);
     });
+
+    
     this.watchBuildingEntry();
   };
 
