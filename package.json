@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^17.0.37",
-    "@workadventure/iframe-api-typings": "^1.6.3",
+    "@workadventure/iframe-api-typings": "^1.7.3",
     "eslint": "^7.24.0",
     "html-webpack-plugin": "^5.3.1",
     "ts-loader": "^8.1.0",
@@ -26,7 +26,7 @@
   "dependencies": {
     "@firebase/auth": "^0.19.7",
     "@metamask/detect-provider": "^1.2.0",
-    "@workadventure/scripting-api-extra": "^1.2.0",
+    "@workadventure/scripting-api-extra": "^1.2.2",
     "assert": "^2.0.0",
     "axios": "^0.25.0",
     "bignumber.js": "^9.0.1",
