@@ -7,12 +7,13 @@ import {
   createMyInventoryTab,
 } from "./application/menu";
 import { initializeBetaQuest } from "./application/beta-quest/betaQuest";
-import { initializeBoardsEnv } from "./application/environment/boardsProcessor";
+import { initializeBoardsEnv } from "./application/environment/boards/boardsProcessor";
 import { Account } from "./models/account";
 import { AudioPlayer, MUSICS } from "./models/audioPlayer";
 import { LayerManager } from "./models/layerManager";
 import { PenguinContract } from "./models/penguin/penguinContract/penguinContract";
 import { Player } from "./models/player";
+import { initializeDoors } from "./application/environment/doors/doorsProcessor";
 
 let layerManager: LayerManager;
 let account: Account;
@@ -48,6 +49,7 @@ if (window.ethereum) {
     }
     initializeBetaQuest();
     initializeBoardsEnv();
+    initializeDoors();
     // console.log(player);
     // console.log(player.inventory);
   };
