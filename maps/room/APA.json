@@ -182,7 +182,7 @@
                         {
                          "name":"url",
                          "type":"string",
-                         "value":".\/embedded.html"
+                         "value":"..\/..\/embedded.html"
                         }],
                  "rotation":0,
                  "type":"website",
@@ -286,7 +286,7 @@
         {
          "name":"openWebsite",
          "type":"string",
-         "value":".\/iframe.html"
+         "value":"..\/..\/iframe.html"
         }, 
         {
          "name":"openWebsiteAllowApi",
@@ -296,7 +296,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":".\/script.js"
+         "value":"..\/..\/script.js"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
@@ -305,7 +305,7 @@
         {
          "columns":16,
          "firstgid":1,
-         "image":"src\/assets\/modern_generic.png",
+         "image":"..\/..\/src\/assets\/modern_generic.png",
          "imageheight":1920,
          "imagewidth":512,
          "margin":0,
@@ -318,7 +318,7 @@
         {
          "columns":40,
          "firstgid":961,
-         "image":"src\/assets\/modern_walls_and_floors.png",
+         "image":"..\/..\/src\/assets\/modern_walls_and_floors.png",
          "imageheight":1856,
          "imagewidth":1280,
          "margin":0,
@@ -331,7 +331,7 @@
         {
          "columns":6,
          "firstgid":3281,
-         "image":"src\/assets\/special-zones.png",
+         "image":"..\/..\/src\/assets\/special-zones.png",
          "imageheight":512,
          "imagewidth":192,
          "margin":0,
@@ -354,7 +354,7 @@
         {
          "columns":16,
          "firstgid":3377,
-         "image":"src\/assets\/modern_kitchen.png",
+         "image":"..\/..\/src\/assets\/modern_kitchen.png",
          "imageheight":1472,
          "imagewidth":512,
          "margin":0,
@@ -367,7 +367,7 @@
         {
          "columns":16,
          "firstgid":4113,
-         "image":"src\/assets\/modern_livingroom.png",
+         "image":"..\/..\/src\/assets\/modern_livingroom.png",
          "imageheight":864,
          "imagewidth":512,
          "margin":0,
@@ -380,7 +380,7 @@
         {
          "columns":22,
          "firstgid":4545,
-         "image":"src\/assets\/modern_office.png",
+         "image":"..\/..\/src\/assets\/modern_office.png",
          "imageheight":768,
          "imagewidth":704,
          "margin":0,
@@ -393,7 +393,7 @@
         {
          "columns":4,
          "firstgid":5073,
-         "image":"src\/assets\/sofas_chairs.png",
+         "image":"..\/..\/src\/assets\/sofas_chairs.png",
          "imageheight":160,
          "imagewidth":128,
          "margin":0,
@@ -406,7 +406,7 @@
         {
          "columns":16,
          "firstgid":5093,
-         "image":"src\/assets\/modern_chill.png",
+         "image":"..\/..\/src\/assets\/modern_chill.png",
          "imageheight":1568,
          "imagewidth":512,
          "margin":0,
@@ -419,7 +419,7 @@
         {
          "columns":18,
          "firstgid":5877,
-         "image":"src\/assets\/LimeZu_24_User_Interface_32x32_edited.png",
+         "image":"..\/..\/src\/assets\/LimeZu_24_User_Interface_32x32_edited.png",
          "imageheight":448,
          "imagewidth":576,
          "margin":0,
@@ -432,7 +432,7 @@
         {
          "columns":5,
          "firstgid":6129,
-         "image":"src\/assets\/posters.png",
+         "image":"..\/..\/src\/assets\/posters.png",
          "imageheight":704,
          "imagewidth":160,
          "margin":0,
@@ -445,7 +445,7 @@
         {
          "columns":16,
          "firstgid":6239,
-         "image":"src\/assets\/modern_art.png",
+         "image":"..\/..\/src\/assets\/modern_art.png",
          "imageheight":960,
          "imagewidth":512,
          "margin":0,
@@ -458,7 +458,7 @@
         {
          "columns":8,
          "firstgid":6719,
-         "image":"src\/assets\/fantasy_2.png",
+         "image":"..\/..\/src\/assets\/fantasy_2.png",
          "imageheight":2144,
          "imagewidth":256,
          "margin":0,
@@ -471,7 +471,7 @@
         {
          "columns":16,
          "firstgid":7255,
-         "image":"src\/assets\/modern_sport.png",
+         "image":"..\/..\/src\/assets\/modern_sport.png",
          "imageheight":544,
          "imagewidth":512,
          "margin":0,
@@ -484,7 +484,7 @@
         {
          "columns":8,
          "firstgid":7527,
-         "image":"src\/assets\/fantasy_1.png",
+         "image":"..\/..\/src\/assets\/fantasy_1.png",
          "imageheight":2112,
          "imagewidth":256,
          "margin":0,
@@ -497,7 +497,7 @@
         {
          "columns":8,
          "firstgid":8055,
-         "image":"src\/assets\/farm_exterior_tileset_by_aveontrainer_dej3gqt.png",
+         "image":"..\/..\/src\/assets\/farm_exterior_tileset_by_aveontrainer_dej3gqt.png",
          "imageheight":1106,
          "imagewidth":256,
          "margin":0,
@@ -510,7 +510,7 @@
         {
          "columns":6,
          "firstgid":8327,
-         "image":"src\/assets\/penguinsetp.png",
+         "image":"..\/..\/src\/assets\/penguinsetp.png",
          "imageheight":535,
          "imagewidth":192,
          "margin":0,
@@ -523,7 +523,7 @@
         {
          "columns":24,
          "firstgid":8423,
-         "image":"src\/assets\/aaa.png",
+         "image":"..\/..\/src\/assets\/aaa.png",
          "imageheight":1920,
          "imagewidth":768,
          "margin":0,
@@ -536,7 +536,7 @@
         {
          "columns":4,
          "firstgid":9863,
-         "image":"src\/assets\/NFTtt.png",
+         "image":"..\/..\/src\/assets\/NFTtt.png",
          "imageheight":448,
          "imagewidth":128,
          "margin":0,
@@ -549,7 +549,7 @@
         {
          "columns":10,
          "firstgid":9919,
-         "image":"src\/assets\/TilesA2.png",
+         "image":"..\/..\/src\/assets\/TilesA2.png",
          "imageheight":192,
          "imagewidth":320,
          "margin":0,
@@ -562,7 +562,7 @@
         {
          "columns":8,
          "firstgid":9979,
-         "image":"src\/assets\/winter_biome_tileset_by_katanakiri98_dcmuwks.png",
+         "image":"..\/..\/src\/assets\/winter_biome_tileset_by_katanakiri98_dcmuwks.png",
          "imageheight":1952,
          "imagewidth":256,
          "margin":0,
@@ -575,7 +575,7 @@
         {
          "columns":19,
          "firstgid":10467,
-         "image":"src\/assets\/generic_exterior.png",
+         "image":"..\/..\/src\/assets\/generic_exterior.png",
          "imageheight":1440,
          "imagewidth":608,
          "margin":0,
@@ -588,7 +588,7 @@
         {
          "columns":16,
          "firstgid":11322,
-         "image":"src\/assets\/modern_fishing.png",
+         "image":"..\/..\/src\/assets\/modern_fishing.png",
          "imageheight":864,
          "imagewidth":512,
          "margin":0,
@@ -601,7 +601,7 @@
         {
          "columns":6,
          "firstgid":11754,
-         "image":"src\/assets\/Frame 17.png",
+         "image":"..\/..\/src\/assets\/Frame 17.png",
          "imageheight":128,
          "imagewidth":213,
          "margin":0,
@@ -614,7 +614,7 @@
         {
          "columns":16,
          "firstgid":11778,
-         "image":"src\/assets\/AAA2.png",
+         "image":"..\/..\/src\/assets\/AAA2.png",
          "imageheight":1056,
          "imagewidth":512,
          "margin":0,
@@ -627,7 +627,7 @@
         {
          "columns":8,
          "firstgid":12306,
-         "image":"src\/assets\/Aventuree.png",
+         "image":"..\/..\/src\/assets\/Aventuree.png",
          "imageheight":11000,
          "imagewidth":256,
          "margin":0,
@@ -640,7 +640,7 @@
         {
          "columns":8,
          "firstgid":15050,
-         "image":"src\/assets\/Embr.png",
+         "image":"..\/..\/src\/assets\/Embr.png",
          "imageheight":736,
          "imagewidth":256,
          "margin":0,
@@ -653,7 +653,7 @@
         {
          "columns":5,
          "firstgid":15234,
-         "image":"src\/assets\/letters.png",
+         "image":"..\/..\/src\/assets\/letters.png",
          "imageheight":1323,
          "imagewidth":189,
          "margin":0,
@@ -666,7 +666,7 @@
         {
          "columns":16,
          "firstgid":15439,
-         "image":"src\/assets\/dojo.png",
+         "image":"..\/..\/src\/assets\/dojo.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -679,7 +679,7 @@
         {
          "columns":8,
          "firstgid":15695,
-         "image":"src\/assets\/APA.png",
+         "image":"..\/..\/src\/assets\/APA.png",
          "imageheight":736,
          "imagewidth":256,
          "margin":0,
