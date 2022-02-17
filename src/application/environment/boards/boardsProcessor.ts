@@ -10,7 +10,6 @@ export const initializeBoardsEnv = async () => {
     helloPeng = WA.room
       .onEnterLayer(`boards/${board.layerName}`)
       .subscribe(async () => {
-        WA.controls.disablePlayerControls();
         if (board.dialog) {
           const boardInteraction = await dialoguePromise(
             board.dialog?.rectangleName,
@@ -18,7 +17,6 @@ export const initializeBoardsEnv = async () => {
             board.dialog?.answer
           );
         }
-        WA.controls.restorePlayerControls();
       });
 
     WA.room.onLeaveLayer(`boards/${board.layerName}`).subscribe(() => {
