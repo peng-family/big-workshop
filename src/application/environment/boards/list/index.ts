@@ -7,6 +7,7 @@ import { board5 } from "./board5";
 import { board6 } from "./board6";
 import { board7 } from "./board7";
 import { board8 } from "./board8";
+import { board9 } from "./board9";
 import { IBoard } from "../../dialogModels";
 
 export default [
@@ -19,5 +20,6 @@ export default [
     board6,
     board7,
     board8,
+    board9,
 ] as IBoard[];
 
