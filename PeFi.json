@@ -239,7 +239,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/Welcome to the Fam !..wav"
+                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/WelcometotheFam!.wav"
                 }],
          "type":"tilelayer",
          "visible":true,
