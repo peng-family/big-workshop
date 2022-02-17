@@ -14,6 +14,7 @@ import { LayerManager } from "./models/layerManager";
 import { PenguinContract } from "./models/penguin/penguinContract/penguinContract";
 import { Player } from "./models/player";
 import { initializeDoors } from "./application/environment/doors/doorsProcessor";
+import { exitManager } from "./application/environment/exit-manager";
 
 let layerManager: LayerManager;
 let account: Account;
@@ -50,6 +51,7 @@ if (window.ethereum) {
     initializeBetaQuest();
     initializeBoardsEnv();
     initializeDoors();
+    exitManager();
     // console.log(player);
     // console.log(player.inventory);
   };
@@ -65,4 +67,6 @@ if (window.ethereum) {
   };
 
   initialization().then(initializeMenu).then(initializeLayers);
+
+
 }
