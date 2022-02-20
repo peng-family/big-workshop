@@ -30,7 +30,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/IceDrinks-AllIn.wav"
+                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/https:\/\/peng-family.github.io\/world-of-pengs\/PleasantIcyBeachAdventure.wav"
                 }],
          "type":"tilelayer",
          "visible":true,
