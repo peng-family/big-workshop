@@ -7,9 +7,11 @@ export const initializeBoardsEnv = async () => {
   let helloPeng: any;
 
   Boards.forEach((board) => {
+    console.log("board", board);
     helloPeng = WA.room
       .onEnterLayer(`boards/${board.layerName}`)
       .subscribe(async () => {
+        console.log("enter in ", board.layerName);
         if (board.dialog) {
           const boardInteraction = await dialoguePromise(
             board.dialog?.rectangleName,
