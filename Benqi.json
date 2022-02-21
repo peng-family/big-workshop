@@ -262,8 +262,8 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":197.94917521177,
-                 "x":920.196165849309,
+                 "width":309.481530453512,
+                 "x":825.664635395797,
                  "y":194.382523406153
                 }, 
                 {
@@ -287,6 +287,17 @@
                  "width":109.373,
                  "x":1395.86295054945,
                  "y":622.202263736264
+                }, 
+                {
+                 "height":0,
+                 "id":29,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1026.68421682422,
+                 "y":180.686849347852
                 }],
          "opacity":1,
          "properties":[
@@ -376,7 +387,7 @@
          "y":0
         }],
  "nextlayerid":109,
- "nextobjectid":29,
+ "nextobjectid":31,
  "orientation":"orthogonal",
  "properties":[
         {
