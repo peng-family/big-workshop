@@ -166,7 +166,7 @@
                  "x":0,
                  "y":0
                 }],
-         "name":"door",
+         "name":"doors",
          "opacity":1,
          "type":"group",
          "visible":true,
