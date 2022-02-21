@@ -15,6 +15,5 @@ export const initializeDoors = async () => {
     });
   } catch (err) {
     console.log("error:", err);
-
   }
 };
