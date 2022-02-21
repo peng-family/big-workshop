@@ -11,7 +11,6 @@ export const initializeBoardsEnv = async () => {
     helloPeng = WA.room
       .onEnterLayer(`boards/${board.layerName}`)
       .subscribe(async () => {
-        console.log("enter in ", board.layerName);
         if (board.dialog) {
           const boardInteraction = await dialoguePromise(
             board.dialog?.rectangleName,

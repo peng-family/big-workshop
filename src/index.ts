@@ -13,6 +13,7 @@ import { AudioPlayer, MUSICS } from "./models/audioPlayer";
 import { LayerManager } from "./models/layerManager";
 import { PenguinContract } from "./models/penguin/penguinContract/penguinContract";
 import { Player } from "./models/player";
+import { initializeDoors } from "./application/environment/doors/doorsProcessor";
 import { exitManager } from "./application/environment/exit-manager";
 
 let layerManager: LayerManager;
@@ -49,6 +50,7 @@ if (window.ethereum) {
         console.log(error);
       }
     }
+    initializeDoors();
     initializeBetaQuest();
     initializeBoardsEnv();
 
