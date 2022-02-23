@@ -83,6 +83,11 @@
                  "name":"openWebsite",
                  "type":"string",
                  "value":"https:\/\/staking.benqi.fi\/stake"
+                }, 
+                {
+                 "name":"silent",
+                 "type":"bool",
+                 "value":true
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -101,6 +106,11 @@
                  "name":"openWebsite",
                  "type":"string",
                  "value":"https:\/\/app.benqi.fi\/markets"
+                }, 
+                {
+                 "name":"silent",
+                 "type":"bool",
+                 "value":true
                 }],
          "type":"tilelayer",
          "visible":true,
