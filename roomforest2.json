@@ -1236,7 +1236,7 @@
         {
          "columns":16,
          "firstgid":5297,
-         "image":"..\/..\/..\/Downloads\/FORET2.png",
+         "image":"src\/assets\/\/forest2.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -1249,7 +1249,7 @@
         {
          "columns":16,
          "firstgid":5553,
-         "image":"..\/..\/..\/Downloads\/FORET3.png",
+         "image":"src\/assets\/forest3.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -1262,7 +1262,7 @@
         {
          "columns":18,
          "firstgid":5809,
-         "image":"..\/..\/..\/Downloads\/WATER3.png",
+         "image":"src\/assets\/water3.png",
          "imageheight":386,
          "imagewidth":576,
          "margin":0,
@@ -1275,7 +1275,7 @@
         {
          "columns":12,
          "firstgid":6025,
-         "image":"..\/..\/..\/Downloads\/biome foret 5.png",
+         "image":"src\/assets\/trees1.png",
          "imageheight":624,
          "imagewidth":384,
          "margin":0,
@@ -1288,7 +1288,7 @@
         {
          "columns":16,
          "firstgid":6253,
-         "image":"..\/..\/..\/Downloads\/biomeforet 6.png",
+         "image":"src\/assets\/trees2.jpg",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -1301,7 +1301,7 @@
         {
          "columns":18,
          "firstgid":7749,
-         "image":"..\/..\/..\/Downloads\/WATERr.png",
+         "image":"src\/assets\/water.png",
          "imageheight":386,
          "imagewidth":576,
          "margin":0,
@@ -1314,7 +1314,7 @@
         {
          "columns":8,
          "firstgid":7965,
-         "image":"..\/..\/..\/Downloads\/Bosque2.png",
+         "image":"src\/assets\/Bosque2.png",
          "imageheight":5992,
          "imagewidth":256,
          "margin":0,
