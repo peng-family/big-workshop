@@ -133,7 +133,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/BlackEyedPengs-Tekpeng303.wav.wav"
+                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/BlackEyedPengs-Tekpeng303.wav"
                 }],
          "type":"tilelayer",
          "visible":true,
