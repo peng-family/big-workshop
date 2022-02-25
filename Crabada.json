@@ -30,7 +30,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/https:\/\/peng-family.github.io\/world-of-pengs\/PleasantIcyBeachAdventure.wav"
+                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/PleasantIcyBeachAdventure.wav"
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -83,7 +83,7 @@
          "height":23,
          "id":89,
          "name":"exit",
-         "opacity":0,
+         "opacity":1,
          "properties":[
                 {
                  "name":"exitUrl",
