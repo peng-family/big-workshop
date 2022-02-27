@@ -30,7 +30,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/TexasPokerPengs.wav"
+                 "value":"https:\/\/peng-family.github.io\/world-of-pengs\/src\/assets\/music\/TheDrunkenPeng'sInn.wav"
                 }],
          "type":"tilelayer",
          "visible":true,
