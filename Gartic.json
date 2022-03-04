@@ -84,7 +84,7 @@
                 {
                  "name":"openWebsite",
                  "type":"string",
-                 "value":"https:\/\/www.crazygames.fr\/jeu\/yeti-"
+                 "value":"https:\/\/www.gameflare.com\/online-game\/yetisports-pingu-throw\/"
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -169,7 +169,7 @@
                 {
                  "name":"openWebsite",
                  "type":"string",
-                 "value":"https:\/\/garticphone.com\/fr\/?c=02d398b248"
+                 "value":"https:\/\/garticphone.com\/en\/?c=01712570c6"
                 }, 
                 {
                  "name":"silent",
