@@ -114,7 +114,7 @@
                         {
                          "name":"openWebsite",
                          "type":"string",
-                         "value":"soon"
+                         "value":""
                         }, 
                         {
                          "name":"silent",
@@ -160,7 +160,7 @@
                         {
                          "name":"openWebsite",
                          "type":"string",
-                         "value":"https:\/\/marketplace.kalao.io\/collection\/0xa332eaaeaee048c1d8d51f7303f60b43028f9093"
+                         "value":"https:\/\/marketplace.kalao.io\/collection\/0x383c58d125773b15bbc0fe9ddf14a7f7dc400856"
                         }, 
                         {
                          "name":"silent",
